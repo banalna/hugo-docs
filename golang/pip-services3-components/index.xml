@@ -1,0 +1,1811 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API Toolkit – pip-services3-commons</title><link>/golang/pip-services3-components/</link><description>Recent content in pip-services3-commons on API Toolkit</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/golang/pip-services3-components/index.xml" rel="self" type="application/rss+xml"/><item><title>Golang: Auth</title><link>/golang/pip-services3-components/auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/golang/pip-services3-components/auth/</guid><description>
+&lt;h1 id="command">Command&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#icommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">command&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;add&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">param2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">});&lt;/span>
+&lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">await&lt;/span> &lt;span class="n">command&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">execute&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">)).&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">else&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;2 + 2 = &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="c1">// Console output: 2 + 2 = 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
+&lt;h4 id="constructors">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
+&lt;h4 id="properties">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
+&lt;blockquote>
+&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
+&lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
+&lt;p>See &lt;a href="#command">Command&lt;/a>, &lt;a href="#event">Event&lt;/a>, &lt;a href="#icommandable">ICommandable&lt;/a>&lt;/p>
+&lt;h4 id="example">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">class&lt;/span> &lt;span class="nc">MyDataCommandSet&lt;/span> &lt;span class="kd">extends&lt;/span> &lt;span class="n">CommandSet&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="p">;&lt;/span>
+&lt;span class="n">MyDataCommandSet&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="k">super&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// Any data controller interface
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">addCommand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">makeGetMyDataCommand&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">ICommand&lt;/span> &lt;span class="n">_makeGetMyDataCommand&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;get_mydata&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="p">(&lt;/span>&lt;span class="kt">String&lt;/span> &lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">_controller&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getMyData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>CommandSet()&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates an empty CommandSet object.&lt;/p>
+&lt;h4 id="properties-1">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods-1">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for a command by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for an event by its name in this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+See &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
+&lt;blockquote>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Removes previosly added IEventListener listener.&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
+See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
+&lt;h4 id="example-1">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">event&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Event&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;my_event&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">addListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">myListener&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">notify&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ABC&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">123&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="icommand">ICommand&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Golang: Build</title><link>/golang/pip-services3-components/build/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/golang/pip-services3-components/build/</guid><description>
+&lt;h1 id="command">Command&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#icommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">command&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;add&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">param2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">});&lt;/span>
+&lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">await&lt;/span> &lt;span class="n">command&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">execute&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">)).&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">else&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;2 + 2 = &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="c1">// Console output: 2 + 2 = 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
+&lt;h4 id="constructors">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
+&lt;h4 id="properties">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
+&lt;blockquote>
+&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
+&lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
+&lt;p>See &lt;a href="#command">Command&lt;/a>, &lt;a href="#event">Event&lt;/a>, &lt;a href="#icommandable">ICommandable&lt;/a>&lt;/p>
+&lt;h4 id="example">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">class&lt;/span> &lt;span class="nc">MyDataCommandSet&lt;/span> &lt;span class="kd">extends&lt;/span> &lt;span class="n">CommandSet&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="p">;&lt;/span>
+&lt;span class="n">MyDataCommandSet&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="k">super&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// Any data controller interface
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">addCommand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">makeGetMyDataCommand&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">ICommand&lt;/span> &lt;span class="n">_makeGetMyDataCommand&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;get_mydata&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="p">(&lt;/span>&lt;span class="kt">String&lt;/span> &lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">_controller&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getMyData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>CommandSet()&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates an empty CommandSet object.&lt;/p>
+&lt;h4 id="properties-1">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods-1">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for a command by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for an event by its name in this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+See &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
+&lt;blockquote>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Removes previosly added IEventListener listener.&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
+See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
+&lt;h4 id="example-1">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">event&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Event&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;my_event&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">addListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">myListener&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">notify&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ABC&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">123&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="icommand">ICommand&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Golang: Cache</title><link>/golang/pip-services3-components/cache/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/golang/pip-services3-components/cache/</guid><description>
+&lt;h1 id="command">Command&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#icommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">command&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;add&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">param2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">});&lt;/span>
+&lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">await&lt;/span> &lt;span class="n">command&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">execute&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">)).&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">else&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;2 + 2 = &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="c1">// Console output: 2 + 2 = 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
+&lt;h4 id="constructors">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
+&lt;h4 id="properties">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
+&lt;blockquote>
+&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
+&lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
+&lt;p>See &lt;a href="#command">Command&lt;/a>, &lt;a href="#event">Event&lt;/a>, &lt;a href="#icommandable">ICommandable&lt;/a>&lt;/p>
+&lt;h4 id="example">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">class&lt;/span> &lt;span class="nc">MyDataCommandSet&lt;/span> &lt;span class="kd">extends&lt;/span> &lt;span class="n">CommandSet&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="p">;&lt;/span>
+&lt;span class="n">MyDataCommandSet&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="k">super&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// Any data controller interface
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">addCommand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">makeGetMyDataCommand&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">ICommand&lt;/span> &lt;span class="n">_makeGetMyDataCommand&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;get_mydata&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="p">(&lt;/span>&lt;span class="kt">String&lt;/span> &lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">_controller&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getMyData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>CommandSet()&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates an empty CommandSet object.&lt;/p>
+&lt;h4 id="properties-1">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods-1">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for a command by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for an event by its name in this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+See &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
+&lt;blockquote>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Removes previosly added IEventListener listener.&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
+See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
+&lt;h4 id="example-1">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">event&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Event&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;my_event&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">addListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">myListener&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">notify&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ABC&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">123&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="icommand">ICommand&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Golang: Config</title><link>/golang/pip-services3-components/config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/golang/pip-services3-components/config/</guid><description>
+&lt;h1 id="command">Command&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#icommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">command&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;add&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">param2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">});&lt;/span>
+&lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">await&lt;/span> &lt;span class="n">command&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">execute&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">)).&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">else&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;2 + 2 = &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="c1">// Console output: 2 + 2 = 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
+&lt;h4 id="constructors">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
+&lt;h4 id="properties">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
+&lt;blockquote>
+&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
+&lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
+&lt;p>See &lt;a href="#command">Command&lt;/a>, &lt;a href="#event">Event&lt;/a>, &lt;a href="#icommandable">ICommandable&lt;/a>&lt;/p>
+&lt;h4 id="example">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">class&lt;/span> &lt;span class="nc">MyDataCommandSet&lt;/span> &lt;span class="kd">extends&lt;/span> &lt;span class="n">CommandSet&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="p">;&lt;/span>
+&lt;span class="n">MyDataCommandSet&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="k">super&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// Any data controller interface
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">addCommand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">makeGetMyDataCommand&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">ICommand&lt;/span> &lt;span class="n">_makeGetMyDataCommand&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;get_mydata&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="p">(&lt;/span>&lt;span class="kt">String&lt;/span> &lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">_controller&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getMyData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>CommandSet()&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates an empty CommandSet object.&lt;/p>
+&lt;h4 id="properties-1">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods-1">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for a command by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for an event by its name in this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+See &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
+&lt;blockquote>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Removes previosly added IEventListener listener.&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
+See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
+&lt;h4 id="example-1">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">event&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Event&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;my_event&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">addListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">myListener&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">notify&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ABC&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">123&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="icommand">ICommand&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Golang: Connect</title><link>/golang/pip-services3-components/connect/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/golang/pip-services3-components/connect/</guid><description>
+&lt;h1 id="command">Command&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#icommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">command&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;add&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">param2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">});&lt;/span>
+&lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">await&lt;/span> &lt;span class="n">command&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">execute&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">)).&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">else&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;2 + 2 = &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="c1">// Console output: 2 + 2 = 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
+&lt;h4 id="constructors">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
+&lt;h4 id="properties">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
+&lt;blockquote>
+&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
+&lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
+&lt;p>See &lt;a href="#command">Command&lt;/a>, &lt;a href="#event">Event&lt;/a>, &lt;a href="#icommandable">ICommandable&lt;/a>&lt;/p>
+&lt;h4 id="example">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">class&lt;/span> &lt;span class="nc">MyDataCommandSet&lt;/span> &lt;span class="kd">extends&lt;/span> &lt;span class="n">CommandSet&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="p">;&lt;/span>
+&lt;span class="n">MyDataCommandSet&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="k">super&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// Any data controller interface
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">addCommand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">makeGetMyDataCommand&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">ICommand&lt;/span> &lt;span class="n">_makeGetMyDataCommand&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;get_mydata&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="p">(&lt;/span>&lt;span class="kt">String&lt;/span> &lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">_controller&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getMyData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>CommandSet()&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates an empty CommandSet object.&lt;/p>
+&lt;h4 id="properties-1">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods-1">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for a command by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for an event by its name in this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+See &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
+&lt;blockquote>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Removes previosly added IEventListener listener.&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
+See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
+&lt;h4 id="example-1">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">event&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Event&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;my_event&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">addListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">myListener&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">notify&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ABC&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">123&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="icommand">ICommand&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Golang: Count</title><link>/golang/pip-services3-components/count/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/golang/pip-services3-components/count/</guid><description>
+&lt;h1 id="command">Command&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#icommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">command&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;add&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">param2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">});&lt;/span>
+&lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">await&lt;/span> &lt;span class="n">command&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">execute&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">)).&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">else&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;2 + 2 = &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="c1">// Console output: 2 + 2 = 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
+&lt;h4 id="constructors">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
+&lt;h4 id="properties">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
+&lt;blockquote>
+&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
+&lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
+&lt;p>See &lt;a href="#command">Command&lt;/a>, &lt;a href="#event">Event&lt;/a>, &lt;a href="#icommandable">ICommandable&lt;/a>&lt;/p>
+&lt;h4 id="example">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">class&lt;/span> &lt;span class="nc">MyDataCommandSet&lt;/span> &lt;span class="kd">extends&lt;/span> &lt;span class="n">CommandSet&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="p">;&lt;/span>
+&lt;span class="n">MyDataCommandSet&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="k">super&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// Any data controller interface
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">addCommand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">makeGetMyDataCommand&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">ICommand&lt;/span> &lt;span class="n">_makeGetMyDataCommand&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;get_mydata&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="p">(&lt;/span>&lt;span class="kt">String&lt;/span> &lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">_controller&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getMyData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>CommandSet()&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates an empty CommandSet object.&lt;/p>
+&lt;h4 id="properties-1">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods-1">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for a command by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for an event by its name in this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+See &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
+&lt;blockquote>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Removes previosly added IEventListener listener.&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
+See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
+&lt;h4 id="example-1">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">event&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Event&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;my_event&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">addListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">myListener&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">notify&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ABC&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">123&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="icommand">ICommand&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Golang: Info</title><link>/golang/pip-services3-components/info/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/golang/pip-services3-components/info/</guid><description>
+&lt;h1 id="command">Command&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#icommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">command&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;add&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">param2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">});&lt;/span>
+&lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">await&lt;/span> &lt;span class="n">command&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">execute&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">)).&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">else&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;2 + 2 = &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="c1">// Console output: 2 + 2 = 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
+&lt;h4 id="constructors">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
+&lt;h4 id="properties">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
+&lt;blockquote>
+&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
+&lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
+&lt;p>See &lt;a href="#command">Command&lt;/a>, &lt;a href="#event">Event&lt;/a>, &lt;a href="#icommandable">ICommandable&lt;/a>&lt;/p>
+&lt;h4 id="example">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">class&lt;/span> &lt;span class="nc">MyDataCommandSet&lt;/span> &lt;span class="kd">extends&lt;/span> &lt;span class="n">CommandSet&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="p">;&lt;/span>
+&lt;span class="n">MyDataCommandSet&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="k">super&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// Any data controller interface
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">addCommand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">makeGetMyDataCommand&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">ICommand&lt;/span> &lt;span class="n">_makeGetMyDataCommand&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;get_mydata&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="p">(&lt;/span>&lt;span class="kt">String&lt;/span> &lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">_controller&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getMyData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>CommandSet()&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates an empty CommandSet object.&lt;/p>
+&lt;h4 id="properties-1">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods-1">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for a command by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for an event by its name in this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+See &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
+&lt;blockquote>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Removes previosly added IEventListener listener.&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
+See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
+&lt;h4 id="example-1">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">event&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Event&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;my_event&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">addListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">myListener&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">notify&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ABC&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">123&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="icommand">ICommand&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Golang: Lock</title><link>/golang/pip-services3-components/lock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/golang/pip-services3-components/lock/</guid><description>
+&lt;h1 id="command">Command&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#icommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">command&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;add&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">param2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">});&lt;/span>
+&lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">await&lt;/span> &lt;span class="n">command&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">execute&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">)).&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">else&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;2 + 2 = &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="c1">// Console output: 2 + 2 = 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
+&lt;h4 id="constructors">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
+&lt;h4 id="properties">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
+&lt;blockquote>
+&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
+&lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
+&lt;p>See &lt;a href="#command">Command&lt;/a>, &lt;a href="#event">Event&lt;/a>, &lt;a href="#icommandable">ICommandable&lt;/a>&lt;/p>
+&lt;h4 id="example">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">class&lt;/span> &lt;span class="nc">MyDataCommandSet&lt;/span> &lt;span class="kd">extends&lt;/span> &lt;span class="n">CommandSet&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="p">;&lt;/span>
+&lt;span class="n">MyDataCommandSet&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="k">super&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// Any data controller interface
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">addCommand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">makeGetMyDataCommand&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">ICommand&lt;/span> &lt;span class="n">_makeGetMyDataCommand&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;get_mydata&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="p">(&lt;/span>&lt;span class="kt">String&lt;/span> &lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">_controller&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getMyData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>CommandSet()&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates an empty CommandSet object.&lt;/p>
+&lt;h4 id="properties-1">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods-1">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for a command by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for an event by its name in this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+See &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
+&lt;blockquote>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Removes previosly added IEventListener listener.&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
+See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
+&lt;h4 id="example-1">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">event&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Event&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;my_event&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">addListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">myListener&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">notify&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ABC&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">123&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="icommand">ICommand&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Golang: Log</title><link>/golang/pip-services3-components/log/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/golang/pip-services3-components/log/</guid><description>
+&lt;h1 id="command">Command&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#icommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">command&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;add&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">param2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">});&lt;/span>
+&lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">await&lt;/span> &lt;span class="n">command&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">execute&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">)).&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">else&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;2 + 2 = &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="c1">// Console output: 2 + 2 = 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
+&lt;h4 id="constructors">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
+&lt;h4 id="properties">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
+&lt;blockquote>
+&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
+&lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
+&lt;p>See &lt;a href="#command">Command&lt;/a>, &lt;a href="#event">Event&lt;/a>, &lt;a href="#icommandable">ICommandable&lt;/a>&lt;/p>
+&lt;h4 id="example">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">class&lt;/span> &lt;span class="nc">MyDataCommandSet&lt;/span> &lt;span class="kd">extends&lt;/span> &lt;span class="n">CommandSet&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="p">;&lt;/span>
+&lt;span class="n">MyDataCommandSet&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="k">super&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// Any data controller interface
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">addCommand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">makeGetMyDataCommand&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">ICommand&lt;/span> &lt;span class="n">_makeGetMyDataCommand&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;get_mydata&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="p">(&lt;/span>&lt;span class="kt">String&lt;/span> &lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">_controller&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getMyData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>CommandSet()&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates an empty CommandSet object.&lt;/p>
+&lt;h4 id="properties-1">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods-1">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for a command by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for an event by its name in this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+See &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
+&lt;blockquote>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Removes previosly added IEventListener listener.&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
+See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
+&lt;h4 id="example-1">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">event&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Event&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;my_event&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">addListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">myListener&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">notify&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ABC&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">123&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="icommand">ICommand&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Golang: Test</title><link>/golang/pip-services3-components/test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/golang/pip-services3-components/test/</guid><description>
+&lt;h1 id="command">Command&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#icommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">command&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;add&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsFloat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">param1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">param2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="p">});&lt;/span>
+&lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">await&lt;/span> &lt;span class="n">command&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">execute&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">)).&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">err&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">else&lt;/span> &lt;span class="n">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;2 + 2 = &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="c1">// Console output: 2 + 2 = 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
+&lt;h4 id="constructors">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
+&lt;h4 id="properties">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
+&lt;blockquote>
+&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
+&lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
+&lt;p>See &lt;a href="#command">Command&lt;/a>, &lt;a href="#event">Event&lt;/a>, &lt;a href="#icommandable">ICommandable&lt;/a>&lt;/p>
+&lt;h4 id="example">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">class&lt;/span> &lt;span class="nc">MyDataCommandSet&lt;/span> &lt;span class="kd">extends&lt;/span> &lt;span class="n">CommandSet&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="p">;&lt;/span>
+&lt;span class="n">MyDataCommandSet&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">IMyDataController&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="k">super&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// Any data controller interface
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">_controller&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">controller&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">addCommand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">makeGetMyDataCommand&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">ICommand&lt;/span> &lt;span class="n">_makeGetMyDataCommand&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s1">&amp;#39;get_mydata&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="p">(&lt;/span>&lt;span class="kt">String&lt;/span> &lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="n">param&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getAsString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;param&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">_controller&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getMyData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">);&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
+&lt;blockquote>
+&lt;p>CommandSet()&lt;/p>
+&lt;/blockquote>
+&lt;p>Creates an empty CommandSet object.&lt;/p>
+&lt;h4 id="properties-1">Properties&lt;/h4>
+&lt;blockquote>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The hash code for this object.&lt;/p>
+&lt;blockquote>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A representation of the runtime type of the object.&lt;/p>
+&lt;h4 id="methods-1">Methods&lt;/h4>
+&lt;blockquote>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
+&lt;blockquote>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for a command by its name.&lt;/p>
+&lt;blockquote>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Searches for an event by its name in this command set.&lt;/p>
+&lt;blockquote>
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+See &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
+&lt;blockquote>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;/blockquote>
+&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
+&lt;blockquote>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;/blockquote>
+&lt;p>Removes previosly added IEventListener listener.&lt;/p>
+&lt;blockquote>
+&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;/blockquote>
+&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
+See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
+&lt;h4 id="example-1">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">event&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Event&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;my_event&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">addListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">myListener&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">notify&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;123&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Parameters&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromTuples&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;param1&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ABC&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s1">&amp;#39;param2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">123&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="icommand">ICommand&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item></channel></rss>
