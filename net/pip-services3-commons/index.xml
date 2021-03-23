@@ -1,0 +1,201 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API Toolkit – pip-services3-commons</title><link>/net/pip-services3-commons/</link><description>Recent content in pip-services3-commons on API Toolkit</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 19 Mar 2021 13:51:13 +0300</lastBuildDate><atom:link href="/net/pip-services3-commons/index.xml" rel="self" type="application/rss+xml"/><item><title>Net: Commands</title><link>/net/pip-services3-commons/commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/net/pip-services3-commons/commands/</guid><description>
+&lt;h1 id="command">&lt;a href="">Command&lt;/a>&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ICommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;pre>&lt;code class="language-.net" data-lang=".net">var command = new Command(&amp;quot;add&amp;quot;, null, async(args) =&amp;gt; {
+var param1 = args.GetAsFloat(&amp;quot;param1&amp;quot;);
+var param2 = args.GetAsFloat(&amp;quot;param2&amp;quot;);
+return param1 + param2; });
+var result = command.ExecuteAsync(&amp;quot;123&amp;quot;, Parameters.fromTuples(
+&amp;quot;param1&amp;quot;, 2,
+&amp;quot;param2&amp;quot;, 2 ));
+Console.WriteLine(result.ToString());
+// Console output: 4
+&lt;/code>&lt;/pre>&lt;p>See &lt;a href="../ICommand">ICommand&lt;/a>, &lt;a href="../CommandSet">CommandSet&lt;/a>&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;h1 id="icommand">&lt;a href="">ICommand&lt;/a>&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Net: Config</title><link>/net/pip-services3-commons/config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/net/pip-services3-commons/config/</guid><description>
+&lt;h1 id="command">&lt;a href="">Command&lt;/a>&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ICommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;pre>&lt;code class="language-.net" data-lang=".net">var command = new Command(&amp;quot;add&amp;quot;, null, async(args) =&amp;gt; {
+var param1 = args.GetAsFloat(&amp;quot;param1&amp;quot;);
+var param2 = args.GetAsFloat(&amp;quot;param2&amp;quot;);
+return param1 + param2; });
+var result = command.ExecuteAsync(&amp;quot;123&amp;quot;, Parameters.fromTuples(
+&amp;quot;param1&amp;quot;, 2,
+&amp;quot;param2&amp;quot;, 2 ));
+Console.WriteLine(result.ToString());
+// Console output: 4
+&lt;/code>&lt;/pre>&lt;p>See &lt;a href="../ICommand">ICommand&lt;/a>, &lt;a href="../CommandSet">CommandSet&lt;/a>&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;h1 id="icommand">&lt;a href="">ICommand&lt;/a>&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Net: Convert</title><link>/net/pip-services3-commons/convert/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/net/pip-services3-commons/convert/</guid><description>
+&lt;h1 id="command">&lt;a href="">Command&lt;/a>&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ICommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;pre>&lt;code class="language-.net" data-lang=".net">var command = new Command(&amp;quot;add&amp;quot;, null, async(args) =&amp;gt; {
+var param1 = args.GetAsFloat(&amp;quot;param1&amp;quot;);
+var param2 = args.GetAsFloat(&amp;quot;param2&amp;quot;);
+return param1 + param2; });
+var result = command.ExecuteAsync(&amp;quot;123&amp;quot;, Parameters.fromTuples(
+&amp;quot;param1&amp;quot;, 2,
+&amp;quot;param2&amp;quot;, 2 ));
+Console.WriteLine(result.ToString());
+// Console output: 4
+&lt;/code>&lt;/pre>&lt;p>See &lt;a href="../ICommand">ICommand&lt;/a>, &lt;a href="../CommandSet">CommandSet&lt;/a>&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;h1 id="icommand">&lt;a href="">ICommand&lt;/a>&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Net: Data</title><link>/net/pip-services3-commons/data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/net/pip-services3-commons/data/</guid><description>
+&lt;h1 id="command">&lt;a href="">Command&lt;/a>&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ICommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;pre>&lt;code class="language-.net" data-lang=".net">var command = new Command(&amp;quot;add&amp;quot;, null, async(args) =&amp;gt; {
+var param1 = args.GetAsFloat(&amp;quot;param1&amp;quot;);
+var param2 = args.GetAsFloat(&amp;quot;param2&amp;quot;);
+return param1 + param2; });
+var result = command.ExecuteAsync(&amp;quot;123&amp;quot;, Parameters.fromTuples(
+&amp;quot;param1&amp;quot;, 2,
+&amp;quot;param2&amp;quot;, 2 ));
+Console.WriteLine(result.ToString());
+// Console output: 4
+&lt;/code>&lt;/pre>&lt;p>See &lt;a href="../ICommand">ICommand&lt;/a>, &lt;a href="../CommandSet">CommandSet&lt;/a>&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;h1 id="icommand">&lt;a href="">ICommand&lt;/a>&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Net: Errors</title><link>/net/pip-services3-commons/errors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/net/pip-services3-commons/errors/</guid><description>
+&lt;h1 id="command">&lt;a href="">Command&lt;/a>&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ICommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;pre>&lt;code class="language-.net" data-lang=".net">var command = new Command(&amp;quot;add&amp;quot;, null, async(args) =&amp;gt; {
+var param1 = args.GetAsFloat(&amp;quot;param1&amp;quot;);
+var param2 = args.GetAsFloat(&amp;quot;param2&amp;quot;);
+return param1 + param2; });
+var result = command.ExecuteAsync(&amp;quot;123&amp;quot;, Parameters.fromTuples(
+&amp;quot;param1&amp;quot;, 2,
+&amp;quot;param2&amp;quot;, 2 ));
+Console.WriteLine(result.ToString());
+// Console output: 4
+&lt;/code>&lt;/pre>&lt;p>See &lt;a href="../ICommand">ICommand&lt;/a>, &lt;a href="../CommandSet">CommandSet&lt;/a>&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;h1 id="icommand">&lt;a href="">ICommand&lt;/a>&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Net: Random</title><link>/net/pip-services3-commons/random/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/net/pip-services3-commons/random/</guid><description>
+&lt;h1 id="command">&lt;a href="">Command&lt;/a>&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ICommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;pre>&lt;code class="language-.net" data-lang=".net">var command = new Command(&amp;quot;add&amp;quot;, null, async(args) =&amp;gt; {
+var param1 = args.GetAsFloat(&amp;quot;param1&amp;quot;);
+var param2 = args.GetAsFloat(&amp;quot;param2&amp;quot;);
+return param1 + param2; });
+var result = command.ExecuteAsync(&amp;quot;123&amp;quot;, Parameters.fromTuples(
+&amp;quot;param1&amp;quot;, 2,
+&amp;quot;param2&amp;quot;, 2 ));
+Console.WriteLine(result.ToString());
+// Console output: 4
+&lt;/code>&lt;/pre>&lt;p>See &lt;a href="../ICommand">ICommand&lt;/a>, &lt;a href="../CommandSet">CommandSet&lt;/a>&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;h1 id="icommand">&lt;a href="">ICommand&lt;/a>&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Net: Refer</title><link>/net/pip-services3-commons/refer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/net/pip-services3-commons/refer/</guid><description>
+&lt;h1 id="command">&lt;a href="">Command&lt;/a>&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ICommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;pre>&lt;code class="language-.net" data-lang=".net">var command = new Command(&amp;quot;add&amp;quot;, null, async(args) =&amp;gt; {
+var param1 = args.GetAsFloat(&amp;quot;param1&amp;quot;);
+var param2 = args.GetAsFloat(&amp;quot;param2&amp;quot;);
+return param1 + param2; });
+var result = command.ExecuteAsync(&amp;quot;123&amp;quot;, Parameters.fromTuples(
+&amp;quot;param1&amp;quot;, 2,
+&amp;quot;param2&amp;quot;, 2 ));
+Console.WriteLine(result.ToString());
+// Console output: 4
+&lt;/code>&lt;/pre>&lt;p>See &lt;a href="../ICommand">ICommand&lt;/a>, &lt;a href="../CommandSet">CommandSet&lt;/a>&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;h1 id="icommand">&lt;a href="">ICommand&lt;/a>&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Net: Reflect</title><link>/net/pip-services3-commons/reflect/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/net/pip-services3-commons/reflect/</guid><description>
+&lt;h1 id="command">&lt;a href="">Command&lt;/a>&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ICommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;pre>&lt;code class="language-.net" data-lang=".net">var command = new Command(&amp;quot;add&amp;quot;, null, async(args) =&amp;gt; {
+var param1 = args.GetAsFloat(&amp;quot;param1&amp;quot;);
+var param2 = args.GetAsFloat(&amp;quot;param2&amp;quot;);
+return param1 + param2; });
+var result = command.ExecuteAsync(&amp;quot;123&amp;quot;, Parameters.fromTuples(
+&amp;quot;param1&amp;quot;, 2,
+&amp;quot;param2&amp;quot;, 2 ));
+Console.WriteLine(result.ToString());
+// Console output: 4
+&lt;/code>&lt;/pre>&lt;p>See &lt;a href="../ICommand">ICommand&lt;/a>, &lt;a href="../CommandSet">CommandSet&lt;/a>&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;h1 id="icommand">&lt;a href="">ICommand&lt;/a>&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Net: Run</title><link>/net/pip-services3-commons/run/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/net/pip-services3-commons/run/</guid><description>
+&lt;h1 id="command">&lt;a href="">Command&lt;/a>&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ICommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;pre>&lt;code class="language-.net" data-lang=".net">var command = new Command(&amp;quot;add&amp;quot;, null, async(args) =&amp;gt; {
+var param1 = args.GetAsFloat(&amp;quot;param1&amp;quot;);
+var param2 = args.GetAsFloat(&amp;quot;param2&amp;quot;);
+return param1 + param2; });
+var result = command.ExecuteAsync(&amp;quot;123&amp;quot;, Parameters.fromTuples(
+&amp;quot;param1&amp;quot;, 2,
+&amp;quot;param2&amp;quot;, 2 ));
+Console.WriteLine(result.ToString());
+// Console output: 4
+&lt;/code>&lt;/pre>&lt;p>See &lt;a href="../ICommand">ICommand&lt;/a>, &lt;a href="../CommandSet">CommandSet&lt;/a>&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;h1 id="icommand">&lt;a href="">ICommand&lt;/a>&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item><item><title>Net: Validate</title><link>/net/pip-services3-commons/validate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/net/pip-services3-commons/validate/</guid><description>
+&lt;h1 id="command">&lt;a href="">Command&lt;/a>&lt;/h1>
+&lt;p>Concrete implementation of &lt;a href="#ICommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
+&lt;pre>&lt;code class="language-.net" data-lang=".net">var command = new Command(&amp;quot;add&amp;quot;, null, async(args) =&amp;gt; {
+var param1 = args.GetAsFloat(&amp;quot;param1&amp;quot;);
+var param2 = args.GetAsFloat(&amp;quot;param2&amp;quot;);
+return param1 + param2; });
+var result = command.ExecuteAsync(&amp;quot;123&amp;quot;, Parameters.fromTuples(
+&amp;quot;param1&amp;quot;, 2,
+&amp;quot;param2&amp;quot;, 2 ));
+Console.WriteLine(result.ToString());
+// Console output: 4
+&lt;/code>&lt;/pre>&lt;p>See &lt;a href="../ICommand">ICommand&lt;/a>, &lt;a href="../CommandSet">CommandSet&lt;/a>&lt;/p>
+&lt;h1 id="commandset">CommandSet&lt;/h1>
+&lt;h1 id="event">Event&lt;/h1>
+&lt;h1 id="icommand">&lt;a href="">ICommand&lt;/a>&lt;/h1>
+&lt;h1 id="icommandable">ICommandable&lt;/h1>
+&lt;h1 id="icommandintercepter">ICommandIntercepter&lt;/h1>
+&lt;h1 id="ievent">IEvent&lt;/h1>
+&lt;h1 id="ieventlistener">IEventListener&lt;/h1>
+&lt;h1 id="interceptedcommand">InterceptedCommand&lt;/h1></description></item></channel></rss>
