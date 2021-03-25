@@ -2,8 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
-  </url><url>
     <loc>/dart/</loc>
   </url><url>
     <loc>/golang/</loc>
@@ -12,8 +10,7 @@
   </url><url>
     <loc>/python/</loc>
   </url><url>
-    <loc>/search/</loc>
-    <priority>0</priority>
+    <loc>/</loc>
   </url><url>
     <loc>/dart/pip-services3-components/auth/</loc>
   </url><url>
@@ -218,6 +215,8 @@
     <loc>/node/pip-services3-commons/run/</loc>
   </url><url>
     <loc>/python/pip-services3-commons/run/</loc>
+  </url><url>
+    <loc>/search/</loc>
   </url><url>
     <loc>/dart/pip-services3-components/test/</loc>
   </url><url>
