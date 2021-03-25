@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API Toolkit – pip-services3-commons</title><link>/node/pip-services3-commons/</link><description>Recent content in pip-services3-commons on API Toolkit</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 19 Mar 2021 13:51:13 +0300</lastBuildDate><atom:link href="/node/pip-services3-commons/index.xml" rel="self" type="application/rss+xml"/><item><title>Node: Commands</title><link>/node/pip-services3-commons/commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/node/pip-services3-commons/commands/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API Toolkit – pip-services3-commons</title><link>/node/pip-services3-commons/</link><description>Recent content in pip-services3-commons on API Toolkit</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/node/pip-services3-commons/index.xml" rel="self" type="application/rss+xml"/><item><title>Node: Commands</title><link>/node/pip-services3-commons/commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/node/pip-services3-commons/commands/</guid><description>
 &lt;h1 id="command">Command&lt;/h1>
 &lt;p>Concrete implementation of &lt;a href="#icommand">ICommand&lt;/a> interface. Command allows to call a method or function using Command pattern.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="kd">var&lt;/span> &lt;span class="n">command&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Command&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;add&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">correlationId&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
@@ -21,43 +21,43 @@
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
 &lt;h4 id="constructors">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)
+Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;h4 id="properties">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;blockquote>
-&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>getName() → &lt;a href="">String&lt;/a>
+Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>
+Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;
+Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;h1 id="commandset">CommandSet&lt;/h1>
 &lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
 &lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
@@ -82,88 +82,88 @@
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>CommandSet()&lt;/p>
+&lt;p>CommandSet()
+Creates an empty CommandSet object.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates an empty CommandSet object.&lt;/p>
 &lt;h4 id="properties-1">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods-1">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void
+Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void
+Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void
+Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void
+Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void
+Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void
+Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;p>addListener(IEventListener listener) → void
+Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>
+Searches for a command by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for a command by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>
+Searches for an event by its name in this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for an event by its name in this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
-&lt;/blockquote>
-&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;
+Gets all commands registered in this command set. Returns a list of commands.
 See &lt;a href="">ICommand&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;
+Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;blockquote>
-&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void
+Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;/blockquote>
-&lt;p>Removes previosly added IEventListener listener.&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void
+Removes previosly added IEventListener listener.&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>
+Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;/blockquote>
 &lt;h1 id="event">Event&lt;/h1>
 &lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
 See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
@@ -202,43 +202,43 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
 &lt;h4 id="constructors">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)
+Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;h4 id="properties">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;blockquote>
-&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>getName() → &lt;a href="">String&lt;/a>
+Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>
+Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;
+Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;h1 id="commandset">CommandSet&lt;/h1>
 &lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
 &lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
@@ -263,88 +263,88 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>CommandSet()&lt;/p>
+&lt;p>CommandSet()
+Creates an empty CommandSet object.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates an empty CommandSet object.&lt;/p>
 &lt;h4 id="properties-1">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods-1">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void
+Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void
+Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void
+Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void
+Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void
+Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void
+Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;p>addListener(IEventListener listener) → void
+Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>
+Searches for a command by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for a command by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>
+Searches for an event by its name in this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for an event by its name in this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
-&lt;/blockquote>
-&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;
+Gets all commands registered in this command set. Returns a list of commands.
 See &lt;a href="">ICommand&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;
+Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;blockquote>
-&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void
+Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;/blockquote>
-&lt;p>Removes previosly added IEventListener listener.&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void
+Removes previosly added IEventListener listener.&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>
+Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;/blockquote>
 &lt;h1 id="event">Event&lt;/h1>
 &lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
 See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
@@ -383,43 +383,43 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
 &lt;h4 id="constructors">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)
+Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;h4 id="properties">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;blockquote>
-&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>getName() → &lt;a href="">String&lt;/a>
+Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>
+Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;
+Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;h1 id="commandset">CommandSet&lt;/h1>
 &lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
 &lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
@@ -444,88 +444,88 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>CommandSet()&lt;/p>
+&lt;p>CommandSet()
+Creates an empty CommandSet object.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates an empty CommandSet object.&lt;/p>
 &lt;h4 id="properties-1">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods-1">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void
+Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void
+Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void
+Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void
+Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void
+Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void
+Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;p>addListener(IEventListener listener) → void
+Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>
+Searches for a command by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for a command by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>
+Searches for an event by its name in this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for an event by its name in this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
-&lt;/blockquote>
-&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;
+Gets all commands registered in this command set. Returns a list of commands.
 See &lt;a href="">ICommand&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;
+Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;blockquote>
-&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void
+Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;/blockquote>
-&lt;p>Removes previosly added IEventListener listener.&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void
+Removes previosly added IEventListener listener.&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>
+Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;/blockquote>
 &lt;h1 id="event">Event&lt;/h1>
 &lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
 See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
@@ -564,43 +564,43 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
 &lt;h4 id="constructors">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)
+Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;h4 id="properties">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;blockquote>
-&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>getName() → &lt;a href="">String&lt;/a>
+Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>
+Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;
+Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;h1 id="commandset">CommandSet&lt;/h1>
 &lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
 &lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
@@ -625,88 +625,88 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>CommandSet()&lt;/p>
+&lt;p>CommandSet()
+Creates an empty CommandSet object.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates an empty CommandSet object.&lt;/p>
 &lt;h4 id="properties-1">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods-1">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void
+Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void
+Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void
+Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void
+Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void
+Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void
+Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;p>addListener(IEventListener listener) → void
+Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>
+Searches for a command by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for a command by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>
+Searches for an event by its name in this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for an event by its name in this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
-&lt;/blockquote>
-&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;
+Gets all commands registered in this command set. Returns a list of commands.
 See &lt;a href="">ICommand&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;
+Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;blockquote>
-&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void
+Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;/blockquote>
-&lt;p>Removes previosly added IEventListener listener.&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void
+Removes previosly added IEventListener listener.&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>
+Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;/blockquote>
 &lt;h1 id="event">Event&lt;/h1>
 &lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
 See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
@@ -745,43 +745,43 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
 &lt;h4 id="constructors">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)
+Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;h4 id="properties">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;blockquote>
-&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>getName() → &lt;a href="">String&lt;/a>
+Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>
+Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;
+Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;h1 id="commandset">CommandSet&lt;/h1>
 &lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
 &lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
@@ -806,88 +806,88 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>CommandSet()&lt;/p>
+&lt;p>CommandSet()
+Creates an empty CommandSet object.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates an empty CommandSet object.&lt;/p>
 &lt;h4 id="properties-1">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods-1">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void
+Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void
+Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void
+Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void
+Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void
+Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void
+Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;p>addListener(IEventListener listener) → void
+Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>
+Searches for a command by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for a command by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>
+Searches for an event by its name in this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for an event by its name in this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
-&lt;/blockquote>
-&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;
+Gets all commands registered in this command set. Returns a list of commands.
 See &lt;a href="">ICommand&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;
+Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;blockquote>
-&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void
+Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;/blockquote>
-&lt;p>Removes previosly added IEventListener listener.&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void
+Removes previosly added IEventListener listener.&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>
+Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;/blockquote>
 &lt;h1 id="event">Event&lt;/h1>
 &lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
 See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
@@ -926,43 +926,43 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
 &lt;h4 id="constructors">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)
+Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;h4 id="properties">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;blockquote>
-&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>getName() → &lt;a href="">String&lt;/a>
+Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>
+Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;
+Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;h1 id="commandset">CommandSet&lt;/h1>
 &lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
 &lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
@@ -987,88 +987,88 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>CommandSet()&lt;/p>
+&lt;p>CommandSet()
+Creates an empty CommandSet object.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates an empty CommandSet object.&lt;/p>
 &lt;h4 id="properties-1">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods-1">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void
+Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void
+Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void
+Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void
+Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void
+Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void
+Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;p>addListener(IEventListener listener) → void
+Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>
+Searches for a command by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for a command by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>
+Searches for an event by its name in this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for an event by its name in this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
-&lt;/blockquote>
-&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;
+Gets all commands registered in this command set. Returns a list of commands.
 See &lt;a href="">ICommand&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;
+Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;blockquote>
-&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void
+Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;/blockquote>
-&lt;p>Removes previosly added IEventListener listener.&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void
+Removes previosly added IEventListener listener.&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>
+Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;/blockquote>
 &lt;h1 id="event">Event&lt;/h1>
 &lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
 See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
@@ -1107,43 +1107,43 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
 &lt;h4 id="constructors">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)
+Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;h4 id="properties">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;blockquote>
-&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>getName() → &lt;a href="">String&lt;/a>
+Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>
+Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;
+Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;h1 id="commandset">CommandSet&lt;/h1>
 &lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
 &lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
@@ -1168,88 +1168,88 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>CommandSet()&lt;/p>
+&lt;p>CommandSet()
+Creates an empty CommandSet object.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates an empty CommandSet object.&lt;/p>
 &lt;h4 id="properties-1">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods-1">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void
+Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void
+Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void
+Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void
+Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void
+Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void
+Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;p>addListener(IEventListener listener) → void
+Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>
+Searches for a command by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for a command by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>
+Searches for an event by its name in this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for an event by its name in this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
-&lt;/blockquote>
-&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;
+Gets all commands registered in this command set. Returns a list of commands.
 See &lt;a href="">ICommand&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;
+Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;blockquote>
-&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void
+Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;/blockquote>
-&lt;p>Removes previosly added IEventListener listener.&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void
+Removes previosly added IEventListener listener.&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>
+Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;/blockquote>
 &lt;h1 id="event">Event&lt;/h1>
 &lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
 See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
@@ -1288,43 +1288,43 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
 &lt;h4 id="constructors">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)
+Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;h4 id="properties">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;blockquote>
-&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>getName() → &lt;a href="">String&lt;/a>
+Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>
+Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;
+Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;h1 id="commandset">CommandSet&lt;/h1>
 &lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
 &lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
@@ -1349,88 +1349,88 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>CommandSet()&lt;/p>
+&lt;p>CommandSet()
+Creates an empty CommandSet object.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates an empty CommandSet object.&lt;/p>
 &lt;h4 id="properties-1">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods-1">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void
+Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void
+Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void
+Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void
+Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void
+Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void
+Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;p>addListener(IEventListener listener) → void
+Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>
+Searches for a command by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for a command by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>
+Searches for an event by its name in this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for an event by its name in this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
-&lt;/blockquote>
-&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;
+Gets all commands registered in this command set. Returns a list of commands.
 See &lt;a href="">ICommand&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;
+Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;blockquote>
-&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void
+Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;/blockquote>
-&lt;p>Removes previosly added IEventListener listener.&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void
+Removes previosly added IEventListener listener.&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>
+Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;/blockquote>
 &lt;h1 id="event">Event&lt;/h1>
 &lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
 See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
@@ -1469,43 +1469,43 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
 &lt;h4 id="constructors">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)
+Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;h4 id="properties">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;blockquote>
-&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>getName() → &lt;a href="">String&lt;/a>
+Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>
+Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;
+Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;h1 id="commandset">CommandSet&lt;/h1>
 &lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
 &lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
@@ -1530,88 +1530,88 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>CommandSet()&lt;/p>
+&lt;p>CommandSet()
+Creates an empty CommandSet object.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates an empty CommandSet object.&lt;/p>
 &lt;h4 id="properties-1">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods-1">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void
+Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void
+Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void
+Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void
+Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void
+Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void
+Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;p>addListener(IEventListener listener) → void
+Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>
+Searches for a command by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for a command by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>
+Searches for an event by its name in this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for an event by its name in this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
-&lt;/blockquote>
-&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;
+Gets all commands registered in this command set. Returns a list of commands.
 See &lt;a href="">ICommand&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;
+Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;blockquote>
-&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void
+Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;/blockquote>
-&lt;p>Removes previosly added IEventListener listener.&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void
+Removes previosly added IEventListener listener.&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>
+Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;/blockquote>
 &lt;h1 id="event">Event&lt;/h1>
 &lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
 See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
@@ -1650,43 +1650,43 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;a href="#icommand">ICommand&lt;/a>, &lt;a href="#commandset">CommandSet&lt;/a>&lt;/p>
 &lt;h4 id="constructors">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)&lt;/p>
+&lt;p>Command(&lt;a href="">String&lt;/a> name, &lt;a href="">Schema&lt;/a> schema, dynamic func)
+Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p>
 &lt;h4 id="properties">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p>
 &lt;blockquote>
-&lt;p>getName() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>getName() → &lt;a href="">String&lt;/a>
+Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command name. Returns the name of this command. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>&lt;/p>
+&lt;p>getSchema() → &lt;a href="">Schema&lt;/a>
+Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets the command validation schema. Returns the vsalidation schema of this command.&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i> inherited &lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>validate(&lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;
+Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates the command &lt;a href="">Parameters&lt;/a> &lt;code>args&lt;/code> before execution using the defined schema. (&lt;i>override&lt;/i>)&lt;/p>
 &lt;h1 id="commandset">CommandSet&lt;/h1>
 &lt;p>Contains a set of commands and events supported by a &lt;a href="#icommandable">commandable&lt;/a> object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p>
 &lt;p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p>
@@ -1711,88 +1711,88 @@ See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListe
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="constructors-1">Constructors&lt;/h4>
 &lt;blockquote>
-&lt;p>CommandSet()&lt;/p>
+&lt;p>CommandSet()
+Creates an empty CommandSet object.&lt;/p>
 &lt;/blockquote>
-&lt;p>Creates an empty CommandSet object.&lt;/p>
 &lt;h4 id="properties-1">Properties&lt;/h4>
 &lt;blockquote>
-&lt;p>hashCode → &lt;a href="">int&lt;/a>&lt;/p>
+&lt;p>hashCode → &lt;a href="">int&lt;/a>
+The hash code for this object.&lt;/p>
 &lt;/blockquote>
-&lt;p>The hash code for this object.&lt;/p>
 &lt;blockquote>
-&lt;p>runtimeType → &lt;a href="">Type&lt;/a>&lt;/p>
+&lt;p>runtimeType → &lt;a href="">Type&lt;/a>
+A representation of the runtime type of the object.&lt;/p>
 &lt;/blockquote>
-&lt;p>A representation of the runtime type of the object.&lt;/p>
 &lt;h4 id="methods-1">Methods&lt;/h4>
 &lt;blockquote>
-&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void&lt;/p>
+&lt;p>addCommand(&lt;a href="">ICommand&lt;/a> command) → void
+Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommand&lt;/code> command to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void&lt;/p>
+&lt;p>addCommands(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt; commands) → void
+Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>ICommand&lt;/code> commands to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void&lt;/p>
+&lt;p>addCommandSet(&lt;a href="">CommandSet&lt;/a> commandSet) → void
+Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds all of the commands and events from specified &lt;code>CommandSet&lt;/code> command set into this one.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void&lt;/p>
+&lt;p>addEvent(&lt;a href="">IEvent&lt;/a> event) → void
+Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds an &lt;code>IEvent&lt;/code> event to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void&lt;/p>
+&lt;p>addEvents(&lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt; events) → void
+Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds multiple &lt;code>IEvent&lt;/code> events to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void&lt;/p>
+&lt;p>addInterceptor(&lt;a href="">ICommandInterceptor&lt;/a> interceptor) → void
+Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>ICommandInterceptor&lt;/code> command interceptor to this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>addListener(IEventListener listener) → void&lt;/p>
+&lt;p>addListener(IEventListener listener) → void
+Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;/blockquote>
-&lt;p>Adds a &lt;code>IEventListener&lt;/code> listener to receive notifications on fired events.&lt;/p>
 &lt;blockquote>
-&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>&lt;/p>
+&lt;p>execute(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">Future&lt;/a>
+Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Executes a &lt;a href="">ICommand&lt;/a> commandspecificed by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>&lt;/p>
+&lt;p>findCommand(&lt;a href="">String&lt;/a> commandName) → &lt;a href="">ICommand&lt;/a>
+Searches for a command by its name.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for a command by its name.&lt;/p>
 &lt;blockquote>
-&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>&lt;/p>
+&lt;p>findEvent(&lt;a href="">String&lt;/a> eventName) → &lt;a href="">IEvent&lt;/a>
+Searches for an event by its name in this command set.&lt;/p>
 &lt;/blockquote>
-&lt;p>Searches for an event by its name in this command set.&lt;/p>
 &lt;blockquote>
-&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;&lt;/p>
-&lt;/blockquote>
-&lt;p>Gets all commands registered in this command set. Returns a list of commands.
+&lt;p>getCommands() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ICommand&lt;/a>&amp;gt;
+Gets all commands registered in this command set. Returns a list of commands.
 See &lt;a href="">ICommand&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;&lt;/p>
 &lt;/blockquote>
-&lt;p>Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;blockquote>
-&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic&lt;/p>
+&lt;p>getEvents() → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">IEvent&lt;/a>&amp;gt;
+Gets all events registred in this command set. Returns a list of events. See IEvent&lt;/p>
 &lt;/blockquote>
-&lt;p>Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void&lt;/p>
+&lt;p>noSuchMethod(&lt;a href="">Invocation&lt;/a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;blockquote>
-&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void&lt;/p>
+&lt;p>notify(&lt;a href="">String&lt;/a> correlationId, &lt;a href="">String&lt;/a> eventName, &lt;a href="">Parameters&lt;/a> args) → void
+Fires event specified by its name and notifies all registered IEventListener listeners&lt;/p>
 &lt;/blockquote>
-&lt;p>Removes previosly added IEventListener listener.&lt;/p>
 &lt;blockquote>
-&lt;p>toString() → &lt;a href="">String&lt;/a>&lt;/p>
+&lt;p>removeListener(&lt;a href="">IEventListener&lt;/a> listener) → void
+Removes previosly added IEventListener listener.&lt;/p>
 &lt;/blockquote>
-&lt;p>A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;blockquote>
-&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>&amp;gt;&lt;/p>
+&lt;p>toString() → &lt;a href="">String&lt;/a>
+A string representation of this object. (&lt;i>inherited&lt;/i>)&lt;/p>
 &lt;/blockquote>
-&lt;p>Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;blockquote>
+&lt;p>validate(&lt;a href="">String&lt;/a> commandName, &lt;a href="">Parameters&lt;/a> args) → &lt;a href="">List&lt;/a>&amp;lt;&lt;a href="">ValidationResult&lt;/a>
+Validates &lt;code>Parameters&lt;/code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.&lt;/p>
+&lt;/blockquote>
 &lt;h1 id="event">Event&lt;/h1>
 &lt;p>Concrete implementation of &lt;a href="#ievent">IEvent&lt;/a> interface. It allows to send asynchronous notifications to multiple subscribed listeners.
 See &lt;a href="#ievent">IEvent&lt;/a>, &lt;a href="#ieventListener">IEventListener&lt;/a>&lt;/p>
