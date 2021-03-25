@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title> – pip-services3-commons</title>
+    <title> – pip-services3-components</title>
     <link>/golang/pip-services3-components/</link>
-    <description>Recent content in pip-services3-commons on </description>
+    <description>Recent content in pip-services3-components on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     

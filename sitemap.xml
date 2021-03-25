@@ -160,21 +160,21 @@
   </url><url>
     <loc>/golang/pip-services3-commons/</loc>
   </url><url>
-    <loc>/golang/pip-services3-components/</loc>
-  </url><url>
     <loc>/net/pip-services3-commons/</loc>
-  </url><url>
-    <loc>/net/pip-services3-components/</loc>
   </url><url>
     <loc>/node/pip-services3-commons/</loc>
   </url><url>
-    <loc>/node/pip-services3-components/</loc>
-  </url><url>
     <loc>/python/pip-services3-commons/</loc>
   </url><url>
-    <loc>/python/pip-services3-components/</loc>
-  </url><url>
     <loc>/dart/pip-services3-components/</loc>
+  </url><url>
+    <loc>/golang/pip-services3-components/</loc>
+  </url><url>
+    <loc>/net/pip-services3-components/</loc>
+  </url><url>
+    <loc>/node/pip-services3-components/</loc>
+  </url><url>
+    <loc>/python/pip-services3-components/</loc>
   </url><url>
     <loc>/dart/pip-services3-commons/random/</loc>
   </url><url>
@@ -215,8 +215,6 @@
     <loc>/node/pip-services3-commons/run/</loc>
   </url><url>
     <loc>/python/pip-services3-commons/run/</loc>
-  </url><url>
-    <loc>/search/</loc>
   </url><url>
     <loc>/dart/pip-services3-components/test/</loc>
   </url><url>
