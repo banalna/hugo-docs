@@ -12,7 +12,7 @@
   </url><url>
     <loc>/</loc>
   </url><url>
-    <loc>/dart/pip-services3-components/auth/</loc>
+    <loc>/dart/components/auth/</loc>
   </url><url>
     <loc>/golang/pip-services3-components/auth/</loc>
   </url><url>
@@ -22,7 +22,7 @@
   </url><url>
     <loc>/python/pip-services3-components/auth/</loc>
   </url><url>
-    <loc>/dart/pip-services3-components/build/</loc>
+    <loc>/dart/components/build/</loc>
   </url><url>
     <loc>/golang/pip-services3-components/build/</loc>
   </url><url>
@@ -32,7 +32,7 @@
   </url><url>
     <loc>/python/pip-services3-components/build/</loc>
   </url><url>
-    <loc>/dart/pip-services3-components/cache/</loc>
+    <loc>/dart/components/cache/</loc>
   </url><url>
     <loc>/golang/pip-services3-components/cache/</loc>
   </url><url>
@@ -42,7 +42,9 @@
   </url><url>
     <loc>/python/pip-services3-components/cache/</loc>
   </url><url>
-    <loc>/dart/pip-services3-commons/commands/</loc>
+    <loc>/dart/commons/commands/command/</loc>
+  </url><url>
+    <loc>/dart/commons/commands/</loc>
   </url><url>
     <loc>/golang/pip-services3-commons/commands/</loc>
   </url><url>
@@ -52,9 +54,15 @@
   </url><url>
     <loc>/python/pip-services3-commons/commands/</loc>
   </url><url>
-    <loc>/dart/pip-services3-commons/config/</loc>
+    <loc>/dart/commons/commands/commandset/</loc>
   </url><url>
-    <loc>/dart/pip-services3-components/config/</loc>
+    <loc>/dart/commons/</loc>
+  </url><url>
+    <loc>/dart/components/</loc>
+  </url><url>
+    <loc>/dart/commons/config/</loc>
+  </url><url>
+    <loc>/dart/components/config/</loc>
   </url><url>
     <loc>/golang/pip-services3-commons/config/</loc>
   </url><url>
@@ -72,7 +80,7 @@
   </url><url>
     <loc>/python/pip-services3-components/config/</loc>
   </url><url>
-    <loc>/dart/pip-services3-components/connect/</loc>
+    <loc>/dart/components/connect/</loc>
   </url><url>
     <loc>/golang/pip-services3-components/connect/</loc>
   </url><url>
@@ -82,7 +90,7 @@
   </url><url>
     <loc>/python/pip-services3-components/connect/</loc>
   </url><url>
-    <loc>/dart/pip-services3-commons/convert/</loc>
+    <loc>/dart/commons/convert/</loc>
   </url><url>
     <loc>/golang/pip-services3-commons/convert/</loc>
   </url><url>
@@ -92,7 +100,7 @@
   </url><url>
     <loc>/python/pip-services3-commons/convert/</loc>
   </url><url>
-    <loc>/dart/pip-services3-components/count/</loc>
+    <loc>/dart/components/count/</loc>
   </url><url>
     <loc>/golang/pip-services3-components/count/</loc>
   </url><url>
@@ -102,7 +110,7 @@
   </url><url>
     <loc>/python/pip-services3-components/count/</loc>
   </url><url>
-    <loc>/dart/pip-services3-commons/data/</loc>
+    <loc>/dart/commons/data/</loc>
   </url><url>
     <loc>/golang/pip-services3-commons/data/</loc>
   </url><url>
@@ -112,7 +120,7 @@
   </url><url>
     <loc>/python/pip-services3-commons/data/</loc>
   </url><url>
-    <loc>/dart/pip-services3-commons/errors/</loc>
+    <loc>/dart/commons/errors/</loc>
   </url><url>
     <loc>/golang/pip-services3-commons/errors/</loc>
   </url><url>
@@ -124,7 +132,7 @@
   </url><url>
     <loc>/get_started/</loc>
   </url><url>
-    <loc>/dart/pip-services3-components/info/</loc>
+    <loc>/dart/components/info/</loc>
   </url><url>
     <loc>/golang/pip-services3-components/info/</loc>
   </url><url>
@@ -134,7 +142,7 @@
   </url><url>
     <loc>/python/pip-services3-components/info/</loc>
   </url><url>
-    <loc>/dart/pip-services3-components/lock/</loc>
+    <loc>/dart/components/lock/</loc>
   </url><url>
     <loc>/golang/pip-services3-components/lock/</loc>
   </url><url>
@@ -144,7 +152,7 @@
   </url><url>
     <loc>/python/pip-services3-components/lock/</loc>
   </url><url>
-    <loc>/dart/pip-services3-components/log/</loc>
+    <loc>/dart/components/log/</loc>
   </url><url>
     <loc>/golang/pip-services3-components/log/</loc>
   </url><url>
@@ -156,8 +164,6 @@
   </url><url>
     <loc>/net/</loc>
   </url><url>
-    <loc>/dart/pip-services3-commons/</loc>
-  </url><url>
     <loc>/golang/pip-services3-commons/</loc>
   </url><url>
     <loc>/net/pip-services3-commons/</loc>
@@ -165,8 +171,6 @@
     <loc>/node/pip-services3-commons/</loc>
   </url><url>
     <loc>/python/pip-services3-commons/</loc>
-  </url><url>
-    <loc>/dart/pip-services3-components/</loc>
   </url><url>
     <loc>/golang/pip-services3-components/</loc>
   </url><url>
@@ -176,7 +180,7 @@
   </url><url>
     <loc>/python/pip-services3-components/</loc>
   </url><url>
-    <loc>/dart/pip-services3-commons/random/</loc>
+    <loc>/dart/commons/random/</loc>
   </url><url>
     <loc>/golang/pip-services3-commons/random/</loc>
   </url><url>
@@ -186,7 +190,7 @@
   </url><url>
     <loc>/python/pip-services3-commons/random/</loc>
   </url><url>
-    <loc>/dart/pip-services3-commons/refer/</loc>
+    <loc>/dart/commons/refer/</loc>
   </url><url>
     <loc>/golang/pip-services3-commons/refer/</loc>
   </url><url>
@@ -196,7 +200,7 @@
   </url><url>
     <loc>/python/pip-services3-commons/refer/</loc>
   </url><url>
-    <loc>/dart/pip-services3-commons/reflect/</loc>
+    <loc>/dart/commons/reflect/</loc>
   </url><url>
     <loc>/golang/pip-services3-commons/reflect/</loc>
   </url><url>
@@ -206,7 +210,7 @@
   </url><url>
     <loc>/python/pip-services3-commons/reflect/</loc>
   </url><url>
-    <loc>/dart/pip-services3-commons/run/</loc>
+    <loc>/dart/commons/run/</loc>
   </url><url>
     <loc>/golang/pip-services3-commons/run/</loc>
   </url><url>
@@ -216,7 +220,7 @@
   </url><url>
     <loc>/python/pip-services3-commons/run/</loc>
   </url><url>
-    <loc>/dart/pip-services3-components/test/</loc>
+    <loc>/dart/components/test/</loc>
   </url><url>
     <loc>/golang/pip-services3-components/test/</loc>
   </url><url>
@@ -226,7 +230,7 @@
   </url><url>
     <loc>/python/pip-services3-components/test/</loc>
   </url><url>
-    <loc>/dart/pip-services3-commons/validate/</loc>
+    <loc>/dart/commons/validate/</loc>
   </url><url>
     <loc>/golang/pip-services3-commons/validate/</loc>
   </url><url>
