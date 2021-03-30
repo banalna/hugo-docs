@@ -18,19 +18,28 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>CommandSet | </title><meta property="og:title" content="CommandSet" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Contains a set of commands and events supported by a commandable object. The CommandSet supports command interceptors to extend and the command call chain.
+CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.
+See Command, Event, ICommandable
+Example class MyDataCommandSet extends CommandSet { IMyDataController _controller ; MyDataCommandSet(IMyDataController controller): super() { // Any data controller interface  _controller = controller; addCommand(makeGetMyDataCommand()); } ICommand _makeGetMyDataCommand() { return Command( &#39;get_mydata&#39;, null, (String correlationId, Parameters args) { var param = args." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/dart/commons/commands/commandset/" /><meta property="article:section" content="dart" />
 
 
 
 <meta itemprop="name" content="CommandSet">
-<meta itemprop="description" content="">
+<meta itemprop="description" content="Contains a set of commands and events supported by a commandable object. The CommandSet supports command interceptors to extend and the command call chain.
+CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.
+See Command, Event, ICommandable
+Example class MyDataCommandSet extends CommandSet { IMyDataController _controller ; MyDataCommandSet(IMyDataController controller): super() { // Any data controller interface  _controller = controller; addCommand(makeGetMyDataCommand()); } ICommand _makeGetMyDataCommand() { return Command( &#39;get_mydata&#39;, null, (String correlationId, Parameters args) { var param = args.">
 
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="398">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CommandSet"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Contains a set of commands and events supported by a commandable object. The CommandSet supports command interceptors to extend and the command call chain.
+CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.
+See Command, Event, ICommandable
+Example class MyDataCommandSet extends CommandSet { IMyDataController _controller ; MyDataCommandSet(IMyDataController controller): super() { // Any data controller interface  _controller = controller; addCommand(makeGetMyDataCommand()); } ICommand _makeGetMyDataCommand() { return Command( &#39;get_mydata&#39;, null, (String correlationId, Parameters args) { var param = args."/>
 
 
 
@@ -38,8 +47,8 @@
 
 
 
-<link rel="preload" href="../../../../scss/main.min.b6fe658f8fc725d8e99dc3b1bcd96f79391792d4ee828c21bd6f90e5d3c92ee4.css" as="style">
-<link href="../../../../scss/main.min.b6fe658f8fc725d8e99dc3b1bcd96f79391792d4ee828c21bd6f90e5d3c92ee4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../../scss/main.min.ace7801e72183f7c1df24a646f564dc92ffe99b5b475e111b2ab4a1da8a72f1a.css" as="style">
+<link href="../../../../scss/main.min.ace7801e72183f7c1df24a646f564dc92ffe99b5b475e111b2ab4a1da8a72f1a.css" rel="stylesheet" integrity="">
 
 
 
@@ -533,6 +542,55 @@
           </div>
           <div class="col-7" style="padding-left: 20px;">
             CommandSet
+          </div>
+          <div class="arrow pl-4 col-3">
+            
+          </div>
+        </div>
+        </a>
+      </span>
+    
+    
+    
+  </li>
+  
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <li
+      class="td-sidebar-nav__section-title td-sidebar-nav__section p-0  without-child"
+      id="m-dartcommonscommandsevent-li">
+      <span class="">
+        
+        <a href="../../../../dart/commons/commands/event/"
+          class="nav-item-tree align-left pb-2 pt-2 pl-0   td-sidebar-link td-sidebar-link__page"
+          id="m-dartcommonscommandsevent">
+        <div class="d-flex justify-content-center align-items-top">
+          <div class="arrow  col-2">
+            
+          </div>
+          <div class="col-7" style="padding-left: 20px;">
+            Event
           </div>
           <div class="arrow pl-4 col-3">
             
@@ -6208,6 +6266,23 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+            <li><a href="#constructors">Constructors</a></li>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#methods">Methods</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -6264,7 +6339,112 @@
 	<h1>CommandSet</h1>
     
 	       
-	
+	<p>Contains a set of commands and events supported by a <a href="#icommandable">commandable</a> object. The CommandSet supports command interceptors to extend and the command call chain.</p>
+<p>CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.</p>
+<p>See <a href="#command">Command</a>, <a href="#event">Event</a>, <a href="#icommandable">ICommandable</a></p>
+<h4 id="example">Example</h4>
+<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">MyDataCommandSet</span> <span class="kd">extends</span> <span class="n">CommandSet</span> <span class="p">{</span>
+     <span class="n">IMyDataController</span> <span class="n">_controller</span> <span class="p">;</span>
+    <span class="n">MyDataCommandSet</span><span class="p">(</span><span class="n">IMyDataController</span> <span class="n">controller</span><span class="p">)</span><span class="o">:</span> <span class="k">super</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// Any data controller interface
+</span><span class="c1"></span>        <span class="n">_controller</span> <span class="o">=</span> <span class="n">controller</span><span class="p">;</span>
+        <span class="n">addCommand</span><span class="p">(</span><span class="n">makeGetMyDataCommand</span><span class="p">());</span>
+    <span class="p">}</span>
+    <span class="n">ICommand</span> <span class="n">_makeGetMyDataCommand</span><span class="p">()</span>  <span class="p">{</span>
+        <span class="k">return</span>  <span class="n">Command</span><span class="p">(</span>
+          <span class="s1">&#39;get_mydata&#39;</span><span class="p">,</span>
+          <span class="kc">null</span><span class="p">,</span>
+          <span class="p">(</span><span class="kt">String</span> <span class="n">correlationId</span><span class="p">,</span> <span class="n">Parameters</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+              <span class="kd">var</span> <span class="n">param</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">getAsString</span><span class="p">(</span><span class="s1">&#39;param&#39;</span><span class="p">);</span>
+              <span class="k">return</span> <span class="n">_controller</span><span class="p">.</span><span class="n">getMyData</span><span class="p">(</span><span class="n">correlationId</span><span class="p">,</span> <span class="n">param</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="constructors">Constructors</h3>
+<blockquote>
+<p>CommandSet()
+Creates an empty CommandSet object.</p>
+</blockquote>
+<h3 id="properties">Properties</h3>
+<blockquote>
+<p>hashCode → <a href="">int</a>
+The hash code for this object.</p>
+</blockquote>
+<blockquote>
+<p>runtimeType → <a href="">Type</a>
+A representation of the runtime type of the object.</p>
+</blockquote>
+<h3 id="methods">Methods</h3>
+<blockquote>
+<p>addCommand(<a href="">ICommand</a> command) → void
+Adds a <code>ICommand</code> command to this command set.</p>
+</blockquote>
+<blockquote>
+<p>addCommands(<a href="">List</a>&lt;<a href="">ICommand</a>&gt; commands) → void
+Adds multiple <code>ICommand</code> commands to this command set.</p>
+</blockquote>
+<blockquote>
+<p>addCommandSet(<a href="">CommandSet</a> commandSet) → void
+Adds all of the commands and events from specified <code>CommandSet</code> command set into this one.</p>
+</blockquote>
+<blockquote>
+<p>addEvent(<a href="">IEvent</a> event) → void
+Adds an <code>IEvent</code> event to this command set.</p>
+</blockquote>
+<blockquote>
+<p>addEvents(<a href="">List</a>&lt;<a href="">IEvent</a>&gt; events) → void
+Adds multiple <code>IEvent</code> events to this command set.</p>
+</blockquote>
+<blockquote>
+<p>addInterceptor(<a href="">ICommandInterceptor</a> interceptor) → void
+Adds a <code>ICommandInterceptor</code> command interceptor to this command set.</p>
+</blockquote>
+<blockquote>
+<p>addListener(IEventListener listener) → void
+Adds a <code>IEventListener</code> listener to receive notifications on fired events.</p>
+</blockquote>
+<blockquote>
+<p>execute(<a href="">String</a> correlationId, <a href="">String</a> commandName, <a href="">Parameters</a> args) → <a href="">Future</a>
+Executes a <a href="">ICommand</a> commandspecificed by its name.</p>
+</blockquote>
+<blockquote>
+<p>findCommand(<a href="">String</a> commandName) → <a href="">ICommand</a>
+Searches for a command by its name.</p>
+</blockquote>
+<blockquote>
+<p>findEvent(<a href="">String</a> eventName) → <a href="">IEvent</a>
+Searches for an event by its name in this command set.</p>
+</blockquote>
+<blockquote>
+<p>getCommands() → <a href="">List</a>&lt;<a href="">ICommand</a>&gt;
+Gets all commands registered in this command set. Returns a list of commands.
+See <a href="">ICommand</a></p>
+</blockquote>
+<blockquote>
+<p>getEvents() → <a href="">List</a>&lt;<a href="">IEvent</a>&gt;
+Gets all events registred in this command set. Returns a list of events. See IEvent</p>
+</blockquote>
+<blockquote>
+<p>noSuchMethod(<a href="">Invocation</a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (<i>inherited</i>)</p>
+</blockquote>
+<blockquote>
+<p>notify(<a href="">String</a> correlationId, <a href="">String</a> eventName, <a href="">Parameters</a> args) → void
+Fires event specified by its name and notifies all registered IEventListener listeners</p>
+</blockquote>
+<blockquote>
+<p>removeListener(<a href="">IEventListener</a> listener) → void
+Removes previosly added IEventListener listener.</p>
+</blockquote>
+<blockquote>
+<p>toString() → <a href="">String</a>
+A string representation of this object. (<i>inherited</i>)</p>
+</blockquote>
+<blockquote>
+<p>validate(<a href="">String</a> commandName, <a href="">Parameters</a> args) → <a href="">List</a>&lt;<a href="">ValidationResult</a>
+Validates <code>Parameters</code> args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found.</p>
+</blockquote>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001

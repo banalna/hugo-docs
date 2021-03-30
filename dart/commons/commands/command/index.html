@@ -18,19 +18,22 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Command | </title><meta property="og:title" content="Command" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Concrete implementation of ICommand interface. Command allows to call a method or function using Command pattern.
+var command = Command(&#39;add&#39;, null, (correlationId, args) { var param1 = args.getAsFloat(&#39;param1&#39;); var param2 = args.getAsFloat(&#39;param2&#39;); var result = param1 &#43; param2; return result; }); result = await command.execute( &#39;123&#39;, Parameters.fromTuples( [&#39;param1&#39;, 2, &#39;param2&#39;, 2] )).catch(err) { if (err!= null) print(err); else print(&#39;2 &#43; 2 = &#39; &#43; result); } ); // Console output: 2 &#43; 2 = 4 See ICommand, CommandSet" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/dart/commons/commands/command/" /><meta property="article:section" content="dart" />
 
 
 
 <meta itemprop="name" content="Command">
-<meta itemprop="description" content="">
+<meta itemprop="description" content="Concrete implementation of ICommand interface. Command allows to call a method or function using Command pattern.
+var command = Command(&#39;add&#39;, null, (correlationId, args) { var param1 = args.getAsFloat(&#39;param1&#39;); var param2 = args.getAsFloat(&#39;param2&#39;); var result = param1 &#43; param2; return result; }); result = await command.execute( &#39;123&#39;, Parameters.fromTuples( [&#39;param1&#39;, 2, &#39;param2&#39;, 2] )).catch(err) { if (err!= null) print(err); else print(&#39;2 &#43; 2 = &#39; &#43; result); } ); // Console output: 2 &#43; 2 = 4 See ICommand, CommandSet">
 
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="225">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Command"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Concrete implementation of ICommand interface. Command allows to call a method or function using Command pattern.
+var command = Command(&#39;add&#39;, null, (correlationId, args) { var param1 = args.getAsFloat(&#39;param1&#39;); var param2 = args.getAsFloat(&#39;param2&#39;); var result = param1 &#43; param2; return result; }); result = await command.execute( &#39;123&#39;, Parameters.fromTuples( [&#39;param1&#39;, 2, &#39;param2&#39;, 2] )).catch(err) { if (err!= null) print(err); else print(&#39;2 &#43; 2 = &#39; &#43; result); } ); // Console output: 2 &#43; 2 = 4 See ICommand, CommandSet"/>
 
 
 
@@ -38,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../../../scss/main.min.b6fe658f8fc725d8e99dc3b1bcd96f79391792d4ee828c21bd6f90e5d3c92ee4.css" as="style">
-<link href="../../../../scss/main.min.b6fe658f8fc725d8e99dc3b1bcd96f79391792d4ee828c21bd6f90e5d3c92ee4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../../scss/main.min.ace7801e72183f7c1df24a646f564dc92ffe99b5b475e111b2ab4a1da8a72f1a.css" as="style">
+<link href="../../../../scss/main.min.ace7801e72183f7c1df24a646f564dc92ffe99b5b475e111b2ab4a1da8a72f1a.css" rel="stylesheet" integrity="">
 
 
 
@@ -533,6 +536,55 @@
           </div>
           <div class="col-7" style="padding-left: 20px;">
             CommandSet
+          </div>
+          <div class="arrow pl-4 col-3">
+            
+          </div>
+        </div>
+        </a>
+      </span>
+    
+    
+    
+  </li>
+  
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <li
+      class="td-sidebar-nav__section-title td-sidebar-nav__section p-0  without-child"
+      id="m-dartcommonscommandsevent-li">
+      <span class="">
+        
+        <a href="../../../../dart/commons/commands/event/"
+          class="nav-item-tree align-left pb-2 pt-2 pl-0   td-sidebar-link td-sidebar-link__page"
+          id="m-dartcommonscommandsevent">
+        <div class="d-flex justify-content-center align-items-top">
+          <div class="arrow  col-2">
+            
+          </div>
+          <div class="col-7" style="padding-left: 20px;">
+            Event
           </div>
           <div class="arrow pl-4 col-3">
             
@@ -6208,6 +6260,22 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#constructors">Constructors</a></li>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#methods">Methods</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -6264,7 +6332,65 @@
 	<h1>Command</h1>
     
 	       
-	
+	<p>Concrete implementation of <a href="#icommand">ICommand</a> interface. Command allows to call a method or function using Command pattern.</p>
+<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">command</span> <span class="o">=</span>  <span class="n">Command</span><span class="p">(</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="p">(</span><span class="n">correlationId</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="n">param1</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">getAsFloat</span><span class="p">(</span><span class="s1">&#39;param1&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="n">param2</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">getAsFloat</span><span class="p">(</span><span class="s1">&#39;param2&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="n">result</span> <span class="o">=</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="n">result</span> <span class="o">=</span> <span class="kd">await</span> <span class="n">command</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span>
+  <span class="s1">&#39;123&#39;</span><span class="p">,</span>
+  <span class="n">Parameters</span><span class="p">.</span><span class="n">fromTuples</span><span class="p">(</span>
+    <span class="p">[</span><span class="s1">&#39;param1&#39;</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span>
+    <span class="s1">&#39;param2&#39;</span><span class="p">,</span> <span class="m">2</span><span class="p">]</span>
+  <span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">err</span><span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="n">print</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+    <span class="k">else</span> <span class="n">print</span><span class="p">(</span><span class="s1">&#39;2 + 2 = &#39;</span> <span class="o">+</span> <span class="n">result</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+<span class="c1">// Console output: 2 + 2 = 4
+</span></code></pre></div><p>See <a href="#icommand">ICommand</a>, <a href="#commandset">CommandSet</a></p>
+<h3 id="constructors">Constructors</h3>
+<blockquote>
+<p>Command(<a href="">String</a> name, <a href="">Schema</a> schema, dynamic func)
+Creates a new command object and assigns it&rsquo;s parameters.</p>
+</blockquote>
+<h3 id="properties">Properties</h3>
+<blockquote>
+<p>hashCode → <a href="">int</a>
+The hash code for this object.</p>
+</blockquote>
+<blockquote>
+<p>runtimeType → <a href="">Type</a>
+A representation of the runtime type of the object.</p>
+</blockquote>
+<h3 id="methods">Methods</h3>
+<blockquote>
+<p>execute(<a href="">String</a> correlationId, <a href="">Parameters</a> args) → <a href="">Future</a>
+Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.</p>
+</blockquote>
+<blockquote>
+<p>getName() → <a href="">String</a>
+Gets the command name. Returns the name of this command. (<i>override</i>)</p>
+</blockquote>
+<blockquote>
+<p>getSchema() → <a href="">Schema</a>
+Gets the command validation schema. Returns the vsalidation schema of this command.</p>
+</blockquote>
+<blockquote>
+<p>noSuchMethod(<a href="">Invocation</a> invocation) → dynamic
+Invoked when a non-existent method or property is accessed. (<i> inherited </i>)</p>
+</blockquote>
+<blockquote>
+<p>toString() → <a href="">String</a>
+A string representation of this object. (<i>inherited</i>)</p>
+</blockquote>
+<blockquote>
+<p>validate(<a href="">Parameters</a> args) → <a href="">List</a>&lt;<a href="">ValidationResult</a>&gt;
+Validates the command <a href="">Parameters</a> <code>args</code> before execution using the defined schema. (<i>override</i>)</p>
+</blockquote>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
