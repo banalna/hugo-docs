@@ -46,8 +46,6 @@
   </url><url>
     <loc>/dart/commons/commands/</loc>
   </url><url>
-    <loc>/dart/commons/commands/logger/</loc>
-  </url><url>
     <loc>/golang/pip-services3-commons/commands/</loc>
   </url><url>
     <loc>/net/pip-services3-commons/commands/</loc>
@@ -163,6 +161,8 @@
     <loc>/node/pip-services3-components/log/</loc>
   </url><url>
     <loc>/python/pip-services3-components/log/</loc>
+  </url><url>
+    <loc>/dart/commons/commands/logger/</loc>
   </url><url>
     <loc>/dart/commons/commands/logger/loggers/</loc>
   </url><url>

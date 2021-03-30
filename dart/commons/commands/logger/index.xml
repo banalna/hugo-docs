@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title> – Commands</title>
+    <title> – Logger</title>
     <link>/dart/commons/commands/logger/</link>
-    <description>Recent content in Commands on </description>
+    <description>Recent content in Logger on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
