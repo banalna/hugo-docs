@@ -318,8 +318,6 @@
         return $(this).bsOffcanvas();
       });
       $(window).on('resize', function () {
-        console.log(document.activeElement)
-        console.log($(document.activeElement).attr('type'))
         if ($(document.activeElement).attr('type') !== 'search') {
           $('.navbar-offcanvas.in').each(function () {
             return $(this).height('').removeClass('in');
