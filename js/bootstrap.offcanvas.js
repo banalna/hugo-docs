@@ -254,8 +254,8 @@
         var clickedEl;
         clickedEl = $(e.target);
         console.log(clickedEl)
-        console.log(clickedEl.hasClass('td-search-input'))
-        if (!clickedEl.hasClass('offcanvas-toggle') && clickedEl.hasClass('td-search-input') && clickedEl.parents('.offcanvas-toggle').length === 0 && clickedEl.parents('.navbar-offcanvas').length === 0 && !clickedEl.hasClass('navbar-offcanvas')) {
+        console.log(!clickedEl.hasClass('td-search-input'))
+        if (!clickedEl.hasClass('offcanvas-toggle') && !clickedEl.hasClass('td-search-input') && clickedEl.parents('.offcanvas-toggle').length === 0 && clickedEl.parents('.navbar-offcanvas').length === 0 && !clickedEl.hasClass('navbar-offcanvas')) {
           if (this.target.hasClass('in')) {
             e.preventDefault();
             this._sendEventsBefore();
