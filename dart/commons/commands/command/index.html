@@ -256,7 +256,6 @@ var command = Command(&#39;add&#39;, null, (correlationId, args) { var param1 = 
 </div>
 </nav>
 
-
     </header>
     <div class="container-fluid td-outer">
       <div class="td-main">
@@ -293,6 +292,7 @@ var command = Command(&#39;add&#39;, null, (correlationId, args) { var param1 = 
       curEl = curEl.parentElement
    }
  }
+
 </script>
 
 
@@ -310,50 +310,7 @@ var command = Command(&#39;add&#39;, null, (correlationId, args) { var param1 = 
     
     
     
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Бренд</a>
-          <button type="button" class="navbar-toggle offcanvas-toggle pull-right" data-toggle="offcanvas"
-            data-target="#js-bootstrap-offcanvas" style="float:left;">
-            <span class="sr-only">Toggle navigation</span>
-            <span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </span>
-          </button>
-        </div>
-        <div class="navbar-offcanvas navbar-offcanvas-touch" id="js-bootstrap-offcanvas">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Ссылка 1</a></li>
-            <li><a href="#">Ссылка 2</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ссылка 3<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Ссылка 3-1</a></li>
-                <li><a href="#">Ссылка 3-2</a></li>
-                <li><a href="#">Ссылка 3-3</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Ссылка 3-4</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Ссылка 3-5</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Что найти?">
-            </div>
-            <button type="submit" class="btn btn-default">Поиск</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Ссылка 4</a></li>
-            <li><a href="#">Ссылка 5</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    
     <div class="container-fluid pr-0 pl-0">
       <div class="nav navbar-nav navbar-offcanvas navbar-offcanvas-right" id="js-bootstrap-offcanvas"
       style="padding-left: 0px; padding-right: 0px;">
@@ -384,8 +341,6 @@ var command = Command(&#39;add&#39;, null, (correlationId, args) { var param1 = 
 
             
         </form>
-        updated2
-
         <hr class="m-0 d-lg-none d-sm-node d-md-block">
         <ul class="td-sidebar-nav__section p-0 md-3 ul-0">
           
@@ -4489,7 +4444,6 @@ var command = Command(&#39;add&#39;, null, (correlationId, args) { var param1 = 
 
         </ul>
       </div>
-      
     </div>
     
     
@@ -4614,6 +4568,7 @@ var command = Command(&#39;add&#39;, null, (correlationId, args) { var param1 = 
 <span class="p">});</span>
 <span class="n">result</span> <span class="o">=</span> <span class="kd">await</span> <span class="n">command</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span>
   <span class="s1">&#39;123&#39;</span><span class="p">,</span>
+  
   <span class="n">Parameters</span><span class="p">.</span><span class="n">fromTuples</span><span class="p">(</span>
     <span class="p">[</span><span class="s1">&#39;param1&#39;</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span>
     <span class="s1">&#39;param2&#39;</span><span class="p">,</span> <span class="m">2</span><span class="p">]</span>
@@ -4790,7 +4745,6 @@ Validates the command <a href="">Parameters</a> <code>args</code> before executi
     debug: true,
   });
 </script>
-
 
 
 <script src="../../../../js/copy-code-button.js"></script>
