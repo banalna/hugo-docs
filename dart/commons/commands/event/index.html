@@ -77,15 +77,7 @@ Example var event = Event(&#39;my_event&#39;); event.addListener(myListener); ev
 		$("#load-tree").click()
 	}
 
-	
-	function fade() {
-		jQuery("#shadow").toggle();
-		if (jQuery("#shadow").is(":hidden")) jQuery(this).removeClass("turnedOff");
-		else jQuery(this).addClass("turnedOff");
-		return false;
-	}
 </script>
-
 
 <style type="text/css">
 
@@ -230,7 +222,7 @@ Example var event = Event(&#39;my_event&#39;); event.addListener(myListener); ev
 						
 						
 					</div>
-					<a class="nav-link lightSwitcher dropdown-toggle" onclick="fade()" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+					<a class="nav-link dropdown-toggle" onclick="fade()" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">
 						Dart
 					</a>
@@ -4839,6 +4831,7 @@ See <a href="#ievent">IEvent</a>, <a href="#ieventListener">IEventListener</a></
 
 
 <script src="../../../../js/copy-code-button.js"></script>
+<script src="../../../../js/fade-light.js"></script>
 
   </body>
 </html>

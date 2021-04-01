@@ -76,15 +76,7 @@ The Components module contains standard component definitions that can be used t
 		$("#load-tree").click()
 	}
 
-	
-	function fade() {
-		jQuery("#shadow").toggle();
-		if (jQuery("#shadow").is(":hidden")) jQuery(this).removeClass("turnedOff");
-		else jQuery(this).addClass("turnedOff");
-		return false;
-	}
 </script>
-
 
 <style type="text/css">
 
@@ -229,7 +221,7 @@ The Components module contains standard component definitions that can be used t
 						
 						
 					</div>
-					<a class="nav-link lightSwitcher dropdown-toggle" onclick="fade()" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+					<a class="nav-link dropdown-toggle" onclick="fade()" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">
 						Python
 					</a>
@@ -5023,6 +5015,7 @@ component factories similar to the example below.</p>
 
 
 <script src="../../js/copy-code-button.js"></script>
+<script src="../../js/fade-light.js"></script>
 
   </body>
 </html>

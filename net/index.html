@@ -73,15 +73,7 @@
 		$("#load-tree").click()
 	}
 
-	
-	function fade() {
-		jQuery("#shadow").toggle();
-		if (jQuery("#shadow").is(":hidden")) jQuery(this).removeClass("turnedOff");
-		else jQuery(this).addClass("turnedOff");
-		return false;
-	}
 </script>
-
 
 <style type="text/css">
 
@@ -226,7 +218,7 @@
 						
 						
 					</div>
-					<a class="nav-link lightSwitcher dropdown-toggle" onclick="fade()" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+					<a class="nav-link dropdown-toggle" onclick="fade()" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">
 						Net
 					</a>
@@ -4773,6 +4765,7 @@ The Components module contains standard component definitions that can be used t
 
 
 <script src="../js/copy-code-button.js"></script>
+<script src="../js/fade-light.js"></script>
 
   </body>
 </html>
