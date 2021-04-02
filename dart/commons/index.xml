@@ -23,8 +23,7 @@
       <description>
         
         
-        &lt;p&gt;efef&lt;/p&gt;
-
+        
       </description>
     </item>
     
@@ -43,11 +42,7 @@
     &lt;span style=&#34;color:#00a8c8&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;param1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;getAsFloat&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#39;param1&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
     &lt;span style=&#34;color:#00a8c8&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;param2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;getAsFloat&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#39;param2&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
     &lt;span style=&#34;color:#00a8c8&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;param1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;param2&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;;&lt;/span&gt;
-    &lt;span style=&#34;color:#00a8c8&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;ewf&lt;/span&gt;
-    &lt;span style=&#34;color:#111&#34;&gt;ew&lt;/span&gt;
-    &lt;span style=&#34;color:#111&#34;&gt;ew&lt;/span&gt;
-
-    &lt;span style=&#34;color:#111&#34;&gt;few&lt;/span&gt;
+    &lt;span style=&#34;color:#00a8c8&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;;&lt;/span&gt;
 &lt;span style=&#34;color:#111&#34;&gt;});&lt;/span&gt;
 &lt;span style=&#34;color:#111&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;command&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;
   &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#39;123&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt;
@@ -1225,10 +1220,7 @@ See &lt;a href=&#34;#ievent&#34;&gt;IEvent&lt;/a&gt;, &lt;a href=&#34;#ieventLis
     &lt;span style=&#34;color:#00a8c8&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;param1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;param2&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;;&lt;/span&gt;
     &lt;span style=&#34;color:#00a8c8&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;;&lt;/span&gt;
 &lt;span style=&#34;color:#111&#34;&gt;});&lt;/span&gt;
-&lt;span style=&#34;color:#111&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;com&lt;/span&gt;
-&lt;span style=&#34;color:#111&#34;&gt;ewf&lt;/span&gt;
-&lt;span style=&#34;color:#111&#34;&gt;we&lt;/span&gt;
-&lt;span style=&#34;color:#111&#34;&gt;fmand&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;command&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;
   &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#39;123&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt;
   &lt;span style=&#34;color:#111&#34;&gt;Parameters&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;fromTuples&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;
     &lt;span style=&#34;color:#111&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#39;param1&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt;
