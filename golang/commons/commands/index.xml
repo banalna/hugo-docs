@@ -1,0 +1,677 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> – Commands</title>
+    <link>/golang/commons/commands/</link>
+    <description>Recent content in Commands on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="/golang/commons/commands/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Golang: Command</title>
+      <link>/golang/commons/commands/command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/commands/command/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;Command&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;// contains filtered or unexported fields
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Concrete implementation of ICommand interface. Command allows to call a method or function using Command pattern.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#75af00&#34;&gt;command&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;NewCommand&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;add&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;correlationId&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;string&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;args&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Parameters&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)(&lt;/span&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;interface&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;{},&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;err&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75af00&#34;&gt;param1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;getAsFloat&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;param1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color:#75af00&#34;&gt;param2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;getAsFloat&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;param2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color:#00a8c8&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;param1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;param2&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;nil&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;});&lt;/span&gt;
+
+&lt;span style=&#34;color:#75af00&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;command&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Execute&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;123&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;Parameters&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;NewParametersFromTuples&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;param1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;param2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;))&lt;/span&gt;
+&lt;span style=&#34;color:#00a8c8&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;err&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75af00&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;err&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75af00&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;2 + 2 = &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;// Console output: 2 + 2 = 4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;funcs&#34;&gt;Funcs&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func NewCommand(name &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;, schema &lt;a href=&#34;../../validate/ischema&#34;&gt;validate.ISchema&lt;/a&gt;,
+function func(correlationId string, args *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;) (interface{}, &lt;a href=&#34;https://pkg.go.dev/builtin#error&#34;&gt;error&lt;/a&gt;)) *&lt;a href=&#34;&#34;&gt;Command&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Creates a new command object and assigns it&amp;rsquo;s parameters.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;name&lt;/strong&gt;: string - the command name.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;schema&lt;/strong&gt;: validate.ISchema the schema to validate command arguments.
+function: func(correlationId string, args *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;) (interface{}, &lt;a href=&#34;https://pkg.go.dev/builtin#error&#34;&gt;error&lt;/a&gt;)
+the function to be executed by this command.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Returns *&lt;a href=&#34;&#34;&gt;Command&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *Command) Execute(correlationId &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;, args *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;) (interface{}, &lt;a href=&#34;https://pkg.go.dev/builtin#error&#34;&gt;error&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Executes the command. Before execution it validates args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;correlationId: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; - (optional) transaction id to trace execution through call chain.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;args: &lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt; - the parameters (arguments) to pass to this command for execution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Returns (interface{}, &lt;a href=&#34;https://pkg.go.dev/builtin#error&#34;&gt;error&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;Command&lt;/a&gt;) GetSchema() &lt;a href=&#34;../../validate/ischema&#34;&gt;validate.ISchema&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GetSchema methods return validation schema for this command&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;Command&lt;/a&gt;) Name() &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gets the command name.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; - the name of this command.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *Command) Validate(args *run.Parameters) []*&lt;a href=&#34;../../validate/validationresult&#34;&gt;validate.ValidationResult&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Validates the command args before execution using the defined schema.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;args: &lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt; - the parameters (arguments) to validate using this command&amp;rsquo;s schema.&lt;/li&gt;
+&lt;li&gt;Returns []*validate.ValidationResult an array of &lt;a href=&#34;../../validate/validationresult&#34;&gt;validate.ValidationResult&lt;/a&gt; or an empty array (if no schema is set).&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Golang: CommandSet</title>
+      <link>/golang/commons/commands/commandset/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/commands/commandset/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;CommandSet&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;// contains filtered or unexported fields
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Contains a set of commands and events supported by a commandable object. The CommandSet supports command interceptors to extend and the command call chain.&lt;/p&gt;
+&lt;p&gt;CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.&lt;/p&gt;
+&lt;p&gt;see &lt;a href=&#34;../command&#34;&gt;Command&lt;/a&gt;, &lt;a href=&#34;../event&#34;&gt;Event&lt;/a&gt;, &lt;a href=&#34;../icommandable&#34;&gt;ICommandable&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;MyDataCommandSet&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75af00&#34;&gt;CommandSet&lt;/span&gt;
+    &lt;span style=&#34;color:#75af00&#34;&gt;_controller&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;IMyDataController&lt;/span&gt;
+ &lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color:#00a8c8&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;dcs&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;MyDataCommandSet&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;CreateMyDataCommandSet&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;controller&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;IMyDataController&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// Any data controller interface
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#75af00&#34;&gt;dcs&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;_controller&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;controller&lt;/span&gt;
+        &lt;span style=&#34;color:#75af00&#34;&gt;dcs&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;addCommand&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;dcs&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;makeGetMyDataCommand&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;())&lt;/span&gt;
+    &lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color:#00a8c8&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;dcs&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;MyDataCommandSet&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;makeGetMyDataCommand&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;ICommand&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#00a8c8&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;NewCommand&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;
+          &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;get_mydata&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt;
+          &lt;span style=&#34;color:#75af00&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt;
+          &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;correlationId&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;string&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;Parameters&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;correlationId&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;string&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;args&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Parameters&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)(&lt;/span&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;interface&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;{},&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;err&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+              &lt;span style=&#34;color:#75af00&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;param&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;getAsString&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;param&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+              &lt;span style=&#34;color:#00a8c8&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;dcs&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;_controller&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;getMyData&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;correlationId&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;param&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,);&lt;/span&gt;
+          &lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+        &lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;funcs&#34;&gt;Funcs&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func NewCommandSet() *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Creates an empty CommandSet object.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) AddCommand(command &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Adds a command to this command set.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;command: &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt; the command to add.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) AddCommandSet(commandSet *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Adds all of the commands and events from specified command set into this one.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;commands: []&lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt; the array of commands to add.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) AddEvent(event &lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Adds an event to this command set.
+see &lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) AddEvents(events []&lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;events: []&lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt; the array of events to add.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) AddInterceptor(interceptor &lt;a href=&#34;../icommandinterceptor&#34;&gt;ICommandInterceptor&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Adds a command interceptor to this command set.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;interceptor: &lt;a href=&#34;../icommandinterceptor&#34;&gt;ICommandInterceptor&lt;/a&gt; the interceptor to add.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../icommandinterceptor&#34;&gt;ICommandInterceptor&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) AddListener(listener &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Adds a listener to receive notifications on fired events.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;listener: &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt; the listener to add.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) Commands() []&lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gets all commands registered in this command set.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns []&lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt; a list of commands.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) Events() []&lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gets all events registred in this command set.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns []&lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt; a list of events.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) Execute(correlationId &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;, commandName &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;, args *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;) (result interface{}, err &lt;a href=&#34;https://pkg.go.dev/builtin#error&#34;&gt;error&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Executes a command specificed by its name.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;correlationId: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; (optional) transaction id to trace execution through call chain.&lt;/li&gt;
+&lt;li&gt;commandName: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; the name of that command that is to be executed.&lt;/li&gt;
+&lt;li&gt;args: &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt; the parameters (arguments) to pass to the command for execution.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns
+&lt;ul&gt;
+&lt;li&gt;result: interface{}&lt;/li&gt;
+&lt;li&gt;err: &lt;a href=&#34;https://pkg.go.dev/builtin#error&#34;&gt;error&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;icommand&#34;&gt;ICommand&lt;/a&gt;, &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) FindCommand(commandName &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;) &lt;a href=&#34;icommand&#34;&gt;ICommand&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Searches for a command by its name.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;commandName: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; the name of the command to search for.&lt;/li&gt;
+&lt;li&gt;Returns &lt;a href=&#34;icommand&#34;&gt;ICommand&lt;/a&gt; the command, whose name matches the provided name.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;icommand&#34;&gt;ICommand&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) FindEvent(eventName &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;) &lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Searches for an event by its name in this command set.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;eventName: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; the name of the event to search for.&lt;/li&gt;
+&lt;li&gt;Returns &lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt; the event, whose name matches the provided name.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) Notify(correlationId &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;, eventName &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;, args *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Fires event specified by its name and notifies all registered listeners&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;correlationId: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; (optional) transaction id to trace execution through call chain.&lt;/li&gt;
+&lt;li&gt;eventName: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; the name of the event that is to be fired.&lt;/li&gt;
+&lt;li&gt;args: &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt; the event arguments (parameters).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) RemoveListener(listener &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Removes previosly added listener.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;listener: &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt;   the listener to remove.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;CommandSet&lt;/a&gt;) Validate(commandName &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;, args *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;) []*&lt;a href=&#34;../../validate/validationresult&#34;&gt;validate.ValidationResult&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Validates args for command specified by its name using defined schema.
+If validation schema is not defined than the methods returns no errors.
+It returns validation error if the command is not found.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;commandName: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; the name of the command for which the &amp;lsquo;args&amp;rsquo; must be validated.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;args: &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt; the parameters (arguments) to validate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Returns []ValidationResult an array of &lt;a href=&#34;../../validate/validationresult&#34;&gt;ValidationResult&lt;/a&gt;. If no command is found by the given name, then the returned array of &lt;a href=&#34;../../validate/validationresult&#34;&gt;ValidationResult&lt;/a&gt; will contain a single entry, whose type will be &lt;a href=&#34;../../validate/validationresult#error&#34;&gt;ValidationResult.Error&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../command&#34;&gt;Command&lt;/a&gt;, &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt;, &lt;a href=&#34;../../validate/validationresult&#34;&gt;ValidationResult&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Golang: Event</title>
+      <link>/golang/commons/commands/event/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/commands/event/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;Event&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;// contains filtered or unexported fields
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Concrete implementation of &lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt; interface.
+It allows to send asynchronous notifications to multiple subscribed listeners.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#75af00&#34;&gt;event&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;NewEvent&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;my_event&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;color:#75af00&#34;&gt;event&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;AddListener&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;myListener&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;color:#75af00&#34;&gt;event&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Notify&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;123&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;Parameters&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;fromTuples&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;
+  &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;param1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;ABC&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;param2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;123&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;funcs&#34;&gt;Funcs&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func NewEvent(name &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;) *&lt;a href=&#34;../event&#34;&gt;Event&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Creates a new event and assigns its name. Throws an Error if the name is null.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;name: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; the name of the event that is to be created.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Returns &lt;a href=&#34;../event&#34;&gt;Event&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;../event&#34;&gt;Event&lt;/a&gt;) AddListener(listener &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Adds a listener to receive notifications when this event is fired.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;listener: &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt; the listener reference to add.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;../event&#34;&gt;Event&lt;/a&gt;) Listeners() []&lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gets all listeners registred in this event.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns []&lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt; a list of listeners.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *Event) Name() &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gets the name of the event.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns string the name of this event.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *Event) Notify(correlationId &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;, args *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Fires this event and notifies all registred listeners.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;correlationId: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; (optional) transaction id to trace execution through call chain.&lt;/li&gt;
+&lt;li&gt;args: &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt; the parameters to raise this event with.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;../event&#34;&gt;Event&lt;/a&gt;) RemoveListener(listener &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Removes a listener, so that it no longer receives notifications for this event.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;listener: &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt; the listener reference to remove.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Golang: ICommand</title>
+      <link>/golang/commons/commands/icommand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/commands/icommand/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;ICommand&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#75af00&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;IExecutable&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;An interface for Commands, which are part of the Command design pattern.
+Each command wraps a method or function and allows to call them in uniform and safe manner.&lt;/p&gt;
+&lt;h3 id=&#34;funcs&#34;&gt;Funcs&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Name() &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gets the command name.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; the command name.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Validate(args *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;) []*&lt;a href=&#34;../../validate/validationresult&#34;&gt;validate.ValidationResult&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Validates command arguments before execution using defined schema.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;args: &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt; the parameters (arguments) to validate.&lt;/li&gt;
+&lt;li&gt;Returns &lt;a href=&#34;../../validate/validationresult&#34;&gt;ValidationResult&lt;/a&gt;[] an array of ValidationResults.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt;, &lt;a href=&#34;../../validate/validationresult&#34;&gt;ValidationResult&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Golang: ICommandable</title>
+      <link>/golang/commons/commands/icommandable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/commands/icommandable/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;ICommandable&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;An interface for commandable objects, which are part of the command design pattern.
+The commandable object exposes its functonality as commands and events groupped into a CommandSet.&lt;/p&gt;
+&lt;p&gt;This interface is typically implemented by controllers and is used to auto generate external interfaces.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;MyDataController&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#75af00&#34;&gt;_commandSet&lt;/span&gt;  &lt;span style=&#34;color:#75af00&#34;&gt;CommandSet&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#00a8c8&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;dc&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;MyDataController&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;getCommandSet&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;CommandSet&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#00a8c8&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;dc&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;_commandSet&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;nil&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color:#75af00&#34;&gt;dc&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;_commandSet&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;NewDataCommandSet&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color:#00a8c8&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;dc&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;_commandSet&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;funcs&#34;&gt;Funcs&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GetCommandSet() *&lt;a href=&#34;../commandset&#34;&gt;CommandSet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gets a command set with all supported commands and events.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns *&lt;a href=&#34;../commandset&#34;&gt;CommandSet&lt;/a&gt; a command set with commands and events.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../commandset&#34;&gt;CommandSet&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Golang: ICommandInterceptor</title>
+      <link>/golang/commons/commands/icommandinterceptor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/commands/icommandinterceptor/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;ICommandInterceptor&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;An interface for stackable command intercepters, which can extend and modify the command call chain.
+This mechanism can be used for authentication, logging, and other functions.&lt;/p&gt;
+&lt;p&gt;see &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt;, &lt;a href=&#34;../interceptedcommand&#34;&gt;InterceptedCommand&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;funcs&#34;&gt;Funcs&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Name(command &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt;) &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gets the name of the wrapped command.
+The interceptor can use this method to override the command name.
+Otherwise it shall just delegate the call to the wrapped command.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;command: &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt; the next command in the call chain.&lt;/li&gt;
+&lt;li&gt;Returns &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; the name of the wrapped command.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Execute(correlationId &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;, command &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt;, args *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;) (interface{}, &lt;a href=&#34;https://pkg.go.dev/builtin#error&#34;&gt;error&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Executes the wrapped command with specified arguments.
+The interceptor can use this method to intercept and alter the command execution.
+Otherwise it shall just delete the call to the wrapped command.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;correlationId: string (optional) transaction id to trace execution through call chain.&lt;/li&gt;
+&lt;li&gt;command: ICommand the next command in the call chain that is to be executed.&lt;/li&gt;
+&lt;li&gt;args: Parameters the function that is to be called once execution is complete.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If an exception is raised, then it will be called with the error.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns:
+&lt;ul&gt;
+&lt;li&gt;result: interface{}&lt;/li&gt;
+&lt;li&gt;err: &lt;a href=&#34;https://pkg.go.dev/builtin#error&#34;&gt;error&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Validate(command &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt;, args *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;) []*&lt;a href=&#34;../../validate/validationresult&#34;&gt;validate.ValidationResult&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Validates arguments of the wrapped command before its execution.
+The interceptor can use this method to intercept and alter validation of the command arguments.
+Otherwise it shall just delegate the call to the wrapped command.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;command: &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt; the next command in the call chain to be validated against.&lt;/li&gt;
+&lt;li&gt;args: &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt; the parameters (arguments) to validate.&lt;/li&gt;
+&lt;li&gt;Returns []*&lt;a href=&#34;../../validate/validationresult&#34;&gt;ValidationResult&lt;/a&gt; an array of *ValidationResults.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt;, &lt;a href=&#34;../../validate/validationresult&#34;&gt;ValidationResult&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Golang: IEvent</title>
+      <link>/golang/commons/commands/ievent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/commands/ievent/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;IEvent&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75af00&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;INotifiable&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;An interface for Events, which are part of the Command design pattern.
+Events allows to send asynchronious notifications to multiple subscribed listeners.&lt;/p&gt;
+&lt;p&gt;see &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;funcs&#34;&gt;Funcs&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Name() &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gets the event name.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; the name of the event.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Listeners() []&lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gets all subscribed listeners.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns []&lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt; a list of listeners.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AddListener(listener &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Adds a listener to receive notifications for this event.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;listener: &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt; the listener reference to add.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;RemoveListener(listener &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Removes a listener, so that it no longer receives notifications for this event.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;listener: &lt;a href=&#34;../ieventlistener&#34;&gt;IEventListener&lt;/a&gt; the listener reference to remove.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Golang: IEventListener</title>
+      <link>/golang/commons/commands/ieventlistener/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/commands/ieventlistener/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;IEventListener&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;An interface for listener objects that receive notifications on fired events.&lt;/p&gt;
+&lt;p&gt;see &lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt;, &lt;a href=&#34;../event&#34;&gt;Event&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;MyListener&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+   &lt;span style=&#34;color:#75af00&#34;&gt;msg&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;string&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+ 
+&lt;span style=&#34;color:#00a8c8&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;MyListener&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;onEvent&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;correlationId&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;string&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;event&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;IEvent&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;args&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;Parameters&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+       &lt;span style=&#34;color:#75af00&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;Fired event &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;event&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Name&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;());&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+ 
+&lt;span style=&#34;color:#75af00&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;event&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;NewEvent&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;myevent&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#75af00&#34;&gt;_listener&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;MyListener&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;{};&lt;/span&gt;
+&lt;span style=&#34;color:#75af00&#34;&gt;event&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;addListener&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;_listener&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#75af00&#34;&gt;event&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;notify&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;123&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;Parameters&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;FromTuples&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;param1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;ABC&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;));&lt;/span&gt;
+ 
+&lt;span style=&#34;color:#75715e&#34;&gt;// Console output: Fired event myevent
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;funcs&#34;&gt;Funcs&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OnEvent(correlationId &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;, e &lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt;, value *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A method called when events this listener is subscrubed to are fired.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;correlationId: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; (optional) transaction id to trace execution through call chain.&lt;/li&gt;
+&lt;li&gt;e: &lt;a href=&#34;../ievent&#34;&gt;IEvent&lt;/a&gt; a fired evemt&lt;/li&gt;
+&lt;li&gt;value: *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt; event arguments.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Golang: InterceptedCommand</title>
+      <link>/golang/commons/commands/interceptedcommand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/commands/interceptedcommand/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;InterceptedCommand&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;// contains filtered or unexported fields
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Implements a command wrapped by an interceptor. It allows to build command call chains. The interceptor can alter execution and delegate calls to a next command, which can be intercepted or concrete.&lt;/p&gt;
+&lt;p&gt;see &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt;, &lt;a href=&#34;../icommandinterceptor&#34;&gt;ICommandInterceptor&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;CommandLogger&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75af00&#34;&gt;msg&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;string&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#00a8c8&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;cl&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;CommandLogger&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;Name&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;command&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;ICommand&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;string&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#00a8c8&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;command&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Name&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#00a8c8&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;cl&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;CommandLogger&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;Execute&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;correlationId&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;string&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;command&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;ICommand&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;args&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;Parameters&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;res&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;interface&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;{},&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;error&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;){&lt;/span&gt;
+    &lt;span style=&#34;color:#75af00&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;Executed command &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;command&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Name&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;());&lt;/span&gt;
+    &lt;span style=&#34;color:#00a8c8&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;command&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Execute&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;correlationId&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#00a8c8&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;cl&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;CommandLogger&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;Validate&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;command&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;ICommand&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;Parameters&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;):&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;ValidationResult&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#00a8c8&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;command&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Validate&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#75af00&#34;&gt;logger&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;CommandLogger&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;mgs&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;CommandLoger&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;};&lt;/span&gt;
+&lt;span style=&#34;color:#75af00&#34;&gt;loggedCommand&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;NewInterceptedCommand&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;logger&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;command&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;// Each called command will output: Executed command &amp;lt;command name&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;funcs&#34;&gt;Funcs&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func NewInterceptedCommand(interceptor &lt;a href=&#34;../icommandinterceptor&#34;&gt;ICommandInterceptor&lt;/a&gt;, next &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt;) *&lt;a href=&#34;&#34;&gt;InterceptedCommand&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Creates a new InterceptedCommand, which serves as a link in an execution chain. Contains information about the interceptor that is being used and the next command in the chain.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;interceptor: &lt;a href=&#34;../icommandinterceptor&#34;&gt;ICommandInterceptor&lt;/a&gt; the interceptor that is intercepting the command.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;next: &lt;a href=&#34;../icommand&#34;&gt;ICommand&lt;/a&gt; (link to) the next command in the command&amp;rsquo;s execution chain.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Returns *&lt;a href=&#34;&#34;&gt;InterceptedCommand&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;InterceptedCommand&lt;/a&gt;) Execute(correlationId &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;, args *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;) (result interface{}, err &lt;a href=&#34;https://pkg.go.dev/builtin#error&#34;&gt;error&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Executes the next command in the execution chain using the given parameters (arguments).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;correlationId: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; unique transaction id to trace calls across components.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;args: &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt; the parameters (arguments) to pass to the command for execution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Returns:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;err: &lt;a href=&#34;https://pkg.go.dev/builtin#error&#34;&gt;error&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;result: interface{}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *InterceptedCommand) Name() &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; the name of the command that is being intercepted.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;InterceptedCommand&lt;/a&gt;) Validate(args *&lt;a href=&#34;../../run/parameters&#34;&gt;run.Parameters&lt;/a&gt;) []*&lt;a href=&#34;../../validate/validationresult&#34;&gt;validate.ValidationResult&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Validates the parameters (arguments) that are to be passed to the command that is next in the execution chain.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;args: &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt; the parameters (arguments) to validate for the next command.&lt;/li&gt;
+&lt;li&gt;Returns []*&lt;a href=&#34;../../validate/validationresult&#34;&gt;ValidationResult&lt;/a&gt; an array of *ValidationResults.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../../run/parameters&#34;&gt;Parameters&lt;/a&gt;, &lt;a href=&#34;../../validate/validationresult&#34;&gt;ValidationResult&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
