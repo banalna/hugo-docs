@@ -5166,7 +5166,6 @@ Validates <code>Parameters</code> args for command specified by its name using d
       if (navEl.getElementsByClassName('td-search-input').length > 0) {
         for (var search of navEl.getElementsByClassName('td-search-input')) {
           var style = window.getComputedStyle(navEl)
-          console.log(style['display']);
           if (navEl.classList.contains('d-lg-block') && style['display'] === 'none') {
             search.remove();
           }

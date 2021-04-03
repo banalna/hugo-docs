@@ -5123,7 +5123,6 @@ Validates the command <a href="">Parameters</a> <code>args</code> before executi
       if (navEl.getElementsByClassName('td-search-input').length > 0) {
         for (var search of navEl.getElementsByClassName('td-search-input')) {
           var style = window.getComputedStyle(navEl)
-          console.log(style['display']);
           if (navEl.classList.contains('d-lg-block') && style['display'] === 'none') {
             search.remove();
           }

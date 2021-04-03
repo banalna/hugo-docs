@@ -1,10 +1,16 @@
 // hack to load sidebar tree
+
 document.addEventListener("readystatechange", loadTree);
 
 function loadTree() {
     var loadbtn = document.getElementById('load-tree');
     loadbtn.setAttribute('hidden', 'true');
     loadbtn.click();
+
+    if (localStorage['openNav'] === 'true') {
+        if (!document.getElementById('js-bootstrap-offcanvas').classList.contains('in'))
+            document.getElementById('js-bootstrap-offcanvas').classList.add('in');
+    }
 }
 
 
