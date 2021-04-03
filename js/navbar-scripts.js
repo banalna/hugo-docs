@@ -23,20 +23,6 @@ function hideAlgoliaPopUp(el) {
     }
 }
 
-localStorage['openNav'] = true;
-
-function openNav() {
-
-    setTimeout(() => {
-        if (localStorage['openNav'] === 'true') {
-            console.log('ok')
-            if (!document.getElementById('js-bootstrap-offcanvas').classList.contains('in'))
-                document.getElementById('js-bootstrap-offcanvas').classList.add('in');
-        }
-    }, 10)
-}
-//document.addEventListener("DOMContentLoaded", openNav);
-
 document.body.addEventListener("click", hideAlgoliaPopUp);
-document.getElementById('navbarDropdownMenuLink').addEventListener('click', fadeBg);
 document.body.addEventListener('click', fadeBg);
+document.getElementById('navbarDropdownMenuLink').addEventListener('click', fadeBg);
