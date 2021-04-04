@@ -5330,10 +5330,11 @@ See <a href="#ievent">IEvent</a>, <a href="#ieventListener">IEventListener</a></
       
 
         hits = hits.filter((item)=>{
-          let hitLangPage = item['dir'].split('\\')[0];
-          let curLangPage = document.location.pathname.split('/')[1];
+          let hitLangPage = item['dir'].split('\\')[0].toLowerCase();
+          let tmpInd = document.location.pathname.split('/').indexOf(hitLangPage);
+          let curLangPage = tmpInd > -1 ? document.location.pathname.split('/')[tmpInd].toLowerCase() : '';
           
-          return hitLangPage.toLowerCase() === curLangPage.toLowerCase();
+          return hitLangPage === curLangPage;
         })
 
         return hits
