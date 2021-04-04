@@ -131,7 +131,7 @@ type MyDataController { _commandSet CommandSet; } func (dc *MyDataController) ge
 							<a class="nav-link dropdown-item"
 								href="../../../../net/" >
 								<span>
-									Net
+									.Net
 									</span>
 							</a>
 						
@@ -255,7 +255,7 @@ type MyDataController { _commandSet CommandSet; } func (dc *MyDataController) ge
 				
 				
 				<a class="nav-link" href="../../../../net/" ><span>
-					Net
+					.Net
 				</span></a>
 			</li>
 			
@@ -4249,28 +4249,6 @@ type MyDataController { _commandSet CommandSet; } func (dc *MyDataController) ge
   
 
   
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
   
   
     
@@ -4911,6 +4889,28 @@ type MyDataController { _commandSet CommandSet; } func (dc *MyDataController) ge
 
           
         
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+          
+        
       </ul>
     
   </li>
@@ -5188,16 +5188,31 @@ The commandable object exposes its functonality as commands and events groupped 
   }
 
   delHiddenLgSearch();
-  
+ 
   docsearch({
       
       
-      apiKey: '3d05087a8e879e0b582e34bb08ff2715', 
-      indexName: 'pipservices', 
-      
+      apiKey: '6974095177303d4ec7cb2a2d7c6f051a', 
+      indexName: 'pip_docs_test', 
+      appId: 'ETKGUND67W',
       
       
       inputSelector: '.td-search-input',
+
+      transformData: function (hits) {
+      
+
+        hits = hits.filter((item)=>{
+          let hitLangPage = item['dir'].split('\\')[0];
+          let curLangPage = document.location.pathname.split('/')[1];
+          
+          return hitLangPage.toLowerCase() === curLangPage.toLowerCase();
+        })
+
+        return hits
+      },
+
+
       
       debug: true,
   });

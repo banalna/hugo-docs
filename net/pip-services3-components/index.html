@@ -124,7 +124,7 @@ The Components module contains standard component definitions that can be used t
 							<a class="nav-link active dropdown-item"
 								href="../../net/" >
 								<span class="active" >
-									Net
+									.Net
 									</span>
 							</a>
 						
@@ -193,7 +193,7 @@ The Components module contains standard component definitions that can be used t
 					</div>
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">
-						Net
+						.Net
 					</a>
 				</li>
 
@@ -248,7 +248,7 @@ The Components module contains standard component definitions that can be used t
 				
 				
 				<a class="nav-link active" href="../../net/" ><span class="active">
-					Net
+					.Net
 				</span></a>
 			</li>
 			
@@ -3554,28 +3554,6 @@ The Components module contains standard component definitions that can be used t
   
 
   
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
   
   
     
@@ -4704,6 +4682,28 @@ The Components module contains standard component definitions that can be used t
 
           
         
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+          
+        
       </ul>
     
   </li>
@@ -4770,7 +4770,7 @@ The Components module contains standard component definitions that can be used t
 
 
 <li class="breadcrumb-item" >
-	<a href="../../net/">Net</a>
+	<a href="../../net/">.Net</a>
 </li>
 
 
@@ -4995,6 +4995,8 @@ component factories similar to the example below.</p>
     <hr class="panel-line">
         
             
+        
+            
                 <div class="entry">
                     <h5>
                         <a href="../../net/pip-services3-components/auth/">Auth</a>
@@ -5083,8 +5085,6 @@ component factories similar to the example below.</p>
                     </h5>
                     <p></p>
                 </div>
-            
-        
             
         
             
@@ -5242,16 +5242,31 @@ component factories similar to the example below.</p>
   }
 
   delHiddenLgSearch();
-  
+ 
   docsearch({
       
       
-      apiKey: '3d05087a8e879e0b582e34bb08ff2715', 
-      indexName: 'pipservices', 
-      
+      apiKey: '6974095177303d4ec7cb2a2d7c6f051a', 
+      indexName: 'pip_docs_test', 
+      appId: 'ETKGUND67W',
       
       
       inputSelector: '.td-search-input',
+
+      transformData: function (hits) {
+      
+
+        hits = hits.filter((item)=>{
+          let hitLangPage = item['dir'].split('\\')[0];
+          let curLangPage = document.location.pathname.split('/')[1];
+          
+          return hitLangPage.toLowerCase() === curLangPage.toLowerCase();
+        })
+
+        return hits
+      },
+
+
       
       debug: true,
   });

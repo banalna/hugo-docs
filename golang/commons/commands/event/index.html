@@ -134,7 +134,7 @@ event: = NewEvent(&#34;my_event&#34;); event.AddListener(myListener); event.Noti
 							<a class="nav-link dropdown-item"
 								href="../../../../net/" >
 								<span>
-									Net
+									.Net
 									</span>
 							</a>
 						
@@ -258,7 +258,7 @@ event: = NewEvent(&#34;my_event&#34;); event.AddListener(myListener); event.Noti
 				
 				
 				<a class="nav-link" href="../../../../net/" ><span>
-					Net
+					.Net
 				</span></a>
 			</li>
 			
@@ -4252,28 +4252,6 @@ event: = NewEvent(&#34;my_event&#34;); event.AddListener(myListener); event.Noti
   
 
   
-
-          
-        
-          
-            
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
   
   
     
@@ -4914,6 +4892,28 @@ event: = NewEvent(&#34;my_event&#34;); event.AddListener(myListener); event.Noti
 
           
         
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+          
+        
       </ul>
     
   </li>
@@ -5232,16 +5232,31 @@ It allows to send asynchronous notifications to multiple subscribed listeners.</
   }
 
   delHiddenLgSearch();
-  
+ 
   docsearch({
       
       
-      apiKey: '3d05087a8e879e0b582e34bb08ff2715', 
-      indexName: 'pipservices', 
-      
+      apiKey: '6974095177303d4ec7cb2a2d7c6f051a', 
+      indexName: 'pip_docs_test', 
+      appId: 'ETKGUND67W',
       
       
       inputSelector: '.td-search-input',
+
+      transformData: function (hits) {
+      
+
+        hits = hits.filter((item)=>{
+          let hitLangPage = item['dir'].split('\\')[0];
+          let curLangPage = document.location.pathname.split('/')[1];
+          
+          return hitLangPage.toLowerCase() === curLangPage.toLowerCase();
+        })
+
+        return hits
+      },
+
+
       
       debug: true,
   });

@@ -12,6 +12,8 @@
   </url><url>
     <loc>/</loc>
   </url><url>
+    <loc>/net/</loc>
+  </url><url>
     <loc>/dart/components/auth/</loc>
   </url><url>
     <loc>/golang/components/auth/</loc>
@@ -187,8 +189,6 @@
     <loc>/dart/commons/commands/logger/</loc>
   </url><url>
     <loc>/dart/commons/commands/logger/loggers/</loc>
-  </url><url>
-    <loc>/net/</loc>
   </url><url>
     <loc>/net/pip-services3-commons/</loc>
   </url><url>
