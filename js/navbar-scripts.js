@@ -37,8 +37,6 @@ function hideAlgoliaPopUp(el) {
     }
 }
 
-localStorage['openNav'] = true;
-
 function openNavState(event) {
     let pressedEl = event.target
     if (pressedEl.id == 'load-tree') { return; }
