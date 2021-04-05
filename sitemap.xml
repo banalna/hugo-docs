@@ -148,6 +148,8 @@
   </url><url>
     <loc>/get_started/</loc>
   </url><url>
+    <loc>/getting_started/</loc>
+  </url><url>
     <loc>/golang/commons/commands/icommand/</loc>
   </url><url>
     <loc>/golang/commons/commands/icommandable/</loc>
@@ -222,6 +224,8 @@
   </url><url>
     <loc>/python/pip-services3-commons/random/</loc>
   </url><url>
+    <loc>/recipes/</loc>
+  </url><url>
     <loc>/dart/commons/refer/</loc>
   </url><url>
     <loc>/golang/commons/refer/</loc>
@@ -261,6 +265,8 @@
     <loc>/node/pip-services3-components/test/</loc>
   </url><url>
     <loc>/python/pip-services3-components/test/</loc>
+  </url><url>
+    <loc>/tutorials/</loc>
   </url><url>
     <loc>/dart/commons/validate/</loc>
   </url><url>
