@@ -177,7 +177,89 @@ see &lt;a href=&#34;#setdefaults&#34;&gt;SetDefaults&lt;/a&gt;&lt;/p&gt;
       <description>
         
         
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;IConfigurable&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;An interface to set configuration parameters to an object.&lt;/p&gt;
+&lt;p&gt;It can be added to any existing class by implementing a single configure() method.&lt;/p&gt;
+&lt;p&gt;If you need to emphasis the fact that configure() method can be called multiple
+times to change object configuration in runtime, use IReconfigurable interface instead.&lt;/p&gt;
+&lt;h3 id=&#34;funcs&#34;&gt;Funcs&lt;/h3&gt;
+&lt;h4 id=&#34;configure&#34;&gt;Configure&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Configure(config *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Configures object by passing configuration parameters.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;config: &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; configuration parameters to be set.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Golang: IReconfigurable</title>
+      <link>/golang/commons/config/ireconfigurable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/config/ireconfigurable/</guid>
+      <description>
         
+        
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;IReconfigurable&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75af00&#34;&gt;IConfigurable&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;An interface to set configuration parameters to an object.&lt;/p&gt;
+&lt;p&gt;It is similar to IConfigurable interface, but emphasises the fact
+that Configure() method can be called more than once to change object configuration in runtime.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Golang: NameResolver</title>
+      <link>/golang/commons/config/nameresolver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/config/nameresolver/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;TNameResolver&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;struct&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A helper class that allows to extract component name from configuration parameters. The name can be defined in &amp;ldquo;id&amp;rdquo;, &amp;ldquo;name&amp;rdquo; parameters or inside a component descriptor.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;
+&lt;span style=&#34;color:#75af00&#34;&gt;config&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;NewConfigParamsFromTuples&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;
+    &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;descriptor&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;myservice:connector:aws:connector1:1.0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;param1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;ABC&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;param2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;123&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;color:#75af00&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;NameResolver&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;Resolve&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// Result: connector1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;funcs&#34;&gt;Funcs&lt;/h3&gt;
+&lt;h4 id=&#34;resolve&#34;&gt;Resolve&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;TNameResolver&lt;/a&gt;) Resolve(config *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;) &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Resolves a component name from configuration parameters. The name can be stored in &amp;ldquo;id&amp;rdquo;, &amp;ldquo;name&amp;rdquo; fields or inside a component descriptor. If name cannot be determined it returns a empty string.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;config: &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; configuration parameters that may contain a component name.&lt;/li&gt;
+&lt;li&gt;Returns string resolved name or &amp;quot;&amp;quot; if the name cannot be determined.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;resolvewithdefault&#34;&gt;ResolveWithDefault&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;&#34;&gt;TNameResolver&lt;/a&gt;) ResolveWithDefault(config *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;, defaultName &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;) &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Resolves a component name from configuration parameters. The name can be stored in &amp;ldquo;id&amp;rdquo;, &amp;ldquo;name&amp;rdquo; fields or inside a component descriptor. If name cannot be determined it returns a defaultName.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;config: &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; configuration parameters that may contain a component name.&lt;/li&gt;
+&lt;li&gt;defaultName: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; a default component name.&lt;/li&gt;
+&lt;li&gt;Returns string resolved name or default name if the name cannot be determined.&lt;/li&gt;
+&lt;/ul&gt;
+
       </description>
     </item>
     

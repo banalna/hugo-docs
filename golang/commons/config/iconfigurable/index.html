@@ -18,19 +18,34 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>IConfigurable | </title><meta property="og:title" content="IConfigurable" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Type type IConfigurable interface { } An interface to set configuration parameters to an object.
+It can be added to any existing class by implementing a single configure() method.
+If you need to emphasis the fact that configure() method can be called multiple times to change object configuration in runtime, use IReconfigurable interface instead.
+Funcs Configure  Configure(config *ConfigParams)
+ Configures object by passing configuration parameters.
+ config: ConfigParams configuration parameters to be set." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/golang/commons/config/iconfigurable/" /><meta property="article:section" content="golang" />
 
 
 
 <meta itemprop="name" content="IConfigurable">
-<meta itemprop="description" content="">
+<meta itemprop="description" content="Type type IConfigurable interface { } An interface to set configuration parameters to an object.
+It can be added to any existing class by implementing a single configure() method.
+If you need to emphasis the fact that configure() method can be called multiple times to change object configuration in runtime, use IReconfigurable interface instead.
+Funcs Configure  Configure(config *ConfigParams)
+ Configures object by passing configuration parameters.
+ config: ConfigParams configuration parameters to be set.">
 
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="71">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="IConfigurable"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Type type IConfigurable interface { } An interface to set configuration parameters to an object.
+It can be added to any existing class by implementing a single configure() method.
+If you need to emphasis the fact that configure() method can be called multiple times to change object configuration in runtime, use IReconfigurable interface instead.
+Funcs Configure  Configure(config *ConfigParams)
+ Configures object by passing configuration parameters.
+ config: ConfigParams configuration parameters to be set."/>
 
 
 
@@ -2061,6 +2076,108 @@
           </div>
           <div class="col-7" style="padding-left: 20px;">
             IConfigurable
+          </div>
+          <div class="arrow pl-4 col-3">
+            
+          </div>
+        </div>
+        </a>
+      </span>
+    
+    
+    
+  </li>
+  
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+
+  
+  
+  
+    <li
+      class="td-sidebar-nav__section-title td-sidebar-nav__section p-0  without-child"
+      id="m-golangcommonsconfigireconfigurable-li">
+      <span class="">
+        
+        <a href="../../../../golang/commons/config/ireconfigurable/"
+          class="nav-item-tree align-left pb-2 pt-2 pl-0   td-sidebar-link td-sidebar-link__page"
+          id="m-golangcommonsconfigireconfigurable">
+        <div class="d-flex justify-content-center align-items-top">
+          <div class="arrow  col-2">
+            
+          </div>
+          <div class="col-7" style="padding-left: 20px;">
+            IReconfigurable
+          </div>
+          <div class="arrow pl-4 col-3">
+            
+          </div>
+        </div>
+        </a>
+      </span>
+    
+    
+    
+  </li>
+  
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+
+  
+  
+  
+    <li
+      class="td-sidebar-nav__section-title td-sidebar-nav__section p-0  without-child"
+      id="m-golangcommonsconfignameresolver-li">
+      <span class="">
+        
+        <a href="../../../../golang/commons/config/nameresolver/"
+          class="nav-item-tree align-left pb-2 pt-2 pl-0   td-sidebar-link td-sidebar-link__page"
+          id="m-golangcommonsconfignameresolver">
+        <div class="d-flex justify-content-center align-items-top">
+          <div class="arrow  col-2">
+            
+          </div>
+          <div class="col-7" style="padding-left: 20px;">
+            NameResolver
           </div>
           <div class="arrow pl-4 col-3">
             
@@ -5175,6 +5292,21 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#type">Type</a></li>
+            <li><a href="#funcs">Funcs</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -5250,7 +5382,24 @@
 	
     
 	       
-	
+	<h3 id="type">Type</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">type</span> <span style="color:#75af00">IConfigurable</span> <span style="color:#00a8c8">interface</span> <span style="color:#111">{</span>
+
+<span style="color:#111">}</span>
+</code></pre></div><p>An interface to set configuration parameters to an object.</p>
+<p>It can be added to any existing class by implementing a single configure() method.</p>
+<p>If you need to emphasis the fact that configure() method can be called multiple
+times to change object configuration in runtime, use IReconfigurable interface instead.</p>
+<h3 id="funcs">Funcs</h3>
+<h4 id="configure">Configure</h4>
+<blockquote>
+<p>Configure(config *<a href="../configparams">ConfigParams</a>)</p>
+</blockquote>
+<p>Configures object by passing configuration parameters.</p>
+<ul>
+<li>config: <a href="../configparams">ConfigParams</a> configuration parameters to be set.</li>
+</ul>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001

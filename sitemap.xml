@@ -172,6 +172,8 @@
   </url><url>
     <loc>/golang/commons/commands/interceptedcommand/</loc>
   </url><url>
+    <loc>/golang/commons/config/ireconfigurable/</loc>
+  </url><url>
     <loc>/dart/components/lock/</loc>
   </url><url>
     <loc>/golang/components/lock/</loc>
@@ -195,6 +197,8 @@
     <loc>/dart/commons/commands/logger/</loc>
   </url><url>
     <loc>/dart/commons/commands/logger/loggers/</loc>
+  </url><url>
+    <loc>/golang/commons/config/nameresolver/</loc>
   </url><url>
     <loc>/net/pip-services3-commons/</loc>
   </url><url>
