@@ -14,5 +14,172 @@
       
     
     
+    <item>
+      <title>Golang: ConfigParams</title>
+      <link>/golang/commons/config/configparams/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/config/configparams/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;ConfigParams&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75af00&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;StringValueMap&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Contains a key-value map with configuration parameters. All values stored as strings and can be serialized as JSON or string forms. When retrieved the values can be automatically converted on read using GetAsXXX methods. The keys are case-sensitive, so it is recommended to use consistent C-style as: &amp;ldquo;my_param&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Configuration parameters can be broken into sections and subsections using dot notation as: &amp;ldquo;section1.subsection1.param1&amp;rdquo;. Using GetSection method all parameters from specified section can be extracted from a ConfigMap.&lt;/p&gt;
+&lt;p&gt;The ConfigParams supports serialization from/to plain strings as: &amp;ldquo;key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;ConfigParams are used to pass configurations to IConfigurable objects. They also serve as a basis for more concrete configurations such as ConnectionParams or CredentialParams (in the Pip.Services components package).&lt;/p&gt;
+&lt;p&gt;see &lt;a href=&#34;../iconfigurable&#34;&gt;IConfigurable&lt;/a&gt;, &lt;a href=&#34;../../data/stringvaluemap&#34;&gt;StringValueMap&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#75af00&#34;&gt;config&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;NewConfigParamsFromTuples&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;
+    &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;section1.key1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;AAA&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;section1.key2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;123&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;section2.key1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#00a8c8&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;color:#75af00&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;GetAsString&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;section1.key1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// Result: AAA
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;GetAsInteger&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;section1.key1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// Result: 0
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75af00&#34;&gt;section1&lt;/span&gt; &lt;span style=&#34;color:#111&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#75af00&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;GetSection&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;section2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#75af00&#34;&gt;section1&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75af00&#34;&gt;GetAsString&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;key1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#111&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// Result: true
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;funcs&#34;&gt;Funcs&lt;/h3&gt;
+&lt;h4 id=&#34;newconfigparams&#34;&gt;NewConfigParams&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func NewConfigParams(values map[&lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;]&lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;) *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Creates a new &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; from map.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;values &amp;hellip;map[&lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;]&lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Returns *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; a newly created &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;newconfigparamsfrommaps&#34;&gt;NewConfigParamsFromMaps&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func NewConfigParamsFromMaps(maps &amp;hellip;map[&lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;]&lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;) *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Creates a new ConfigParams by merging two or more maps. Maps defined later in the list override values from previously defined maps.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;maps &amp;hellip;map[&lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;]&lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;
+an array of maps to be merged&lt;/li&gt;
+&lt;li&gt;Returns *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; a newly created &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;newconfigparamsfromstring&#34;&gt;NewConfigParamsFromString&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func NewConfigParamsFromString(line &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;) *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Creates a new ConfigParams object filled with key-value pairs serialized as a string.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;line: string a string with serialized key-value pairs as &amp;ldquo;key1=value1;key2=value2;&amp;hellip;&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;Example:&lt;/strong&gt; &amp;ldquo;Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Returns *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; a new &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;../data/stringvaluemap#fromstring&#34;&gt;StringValueMap.fromString&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;newconfigparamsfromtuples&#34;&gt;NewConfigParamsFromTuples&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func NewConfigParamsFromTuples(tuples &amp;hellip;interface{}) *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; a new &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;newconfigparamsfromtuplesarray&#34;&gt;NewConfigParamsFromTuplesArray&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func NewConfigParamsFromTuplesArray(tuples []interface{}) *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Creates a new StringValueMap from a list of key-value pairs called tuples. The method is similar to fromTuples but tuples are passed as array instead of parameters.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;tuples []interface{} a list of values where odd elements are keys and the following even elements are values&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Returns *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; a newly created &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;newconfigparamsfromvalue&#34;&gt;NewConfigParamsFromValue&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func NewConfigParamsFromValue(value interface{}) *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Creates a new ConfigParams object filled with key-value pairs from specified object.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;value interface{}
+an object with key-value pairs used to initialize a new &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Returns *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; a new &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;newemptyconfigparams&#34;&gt;NewEmptyConfigParams&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func NewEmptyConfigParams() *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Creates a new empty &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; object.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; a new empty &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;addsection&#34;&gt;AddSection&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;) AddSection(section &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;, sectionParams *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Adds parameters into this &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; under specified section. Keys for the new parameters are appended with section dot prefix.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;section: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; name of the section where add new parameters&lt;/li&gt;
+&lt;li&gt;sectionParams: *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; new parameters to be added.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;getsection&#34;&gt;GetSection&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;) GetSection(section &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;) *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gets parameters from specific section stored in this ConfigMap. The section name is removed from parameter keys.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;section: &lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; name of the section to retrieve configuration parameters from.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Returns *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; all configuration parameters that belong to the section named &amp;lsquo;section&amp;rsquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;getsectionnames&#34;&gt;GetSectionNames&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;) GetSectionNames() []&lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gets a list with all 1st level section names.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Returns []&lt;a href=&#34;https://pkg.go.dev/builtin#string&#34;&gt;string&lt;/a&gt; a list of section names stored in this ConfigMap.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;override&#34;&gt;Override&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;) Override(configParams *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;) *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Overrides parameters with new values from specified ConfigParams and returns a new ConfigParams object.
+see &lt;a href=&#34;#setdefaults&#34;&gt;SetDefaults&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;configParams: *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; ConfigMap with parameters to override the current values.&lt;/li&gt;
+&lt;li&gt;Returns *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; a new &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;setdefaults&#34;&gt;SetDefaults&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;func (c *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;) SetDefaults(defaults *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;) *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Set default values from specified ConfigParams and returns a new ConfigParams object.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;defaultConfigParams: *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; ConfigMap with default parameter values.&lt;/li&gt;
+&lt;li&gt;Returns *&lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; a new &lt;a href=&#34;../configparams&#34;&gt;ConfigParams&lt;/a&gt; object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see &lt;a href=&#34;#override&#34;&gt;Override&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Golang: IConfigurable</title>
+      <link>/golang/commons/config/iconfigurable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/golang/commons/config/iconfigurable/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
   </channel>
 </rss>

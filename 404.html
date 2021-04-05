@@ -33,8 +33,8 @@
 
 
 
-<link rel="preload" href="./scss/main.min.c19c2d20f37ab909a8cd52692dd287e2f866741f8bb29f977344a3fbe9779b07.css" as="style">
-<link href="./scss/main.min.c19c2d20f37ab909a8cd52692dd287e2f866741f8bb29f977344a3fbe9779b07.css" rel="stylesheet" integrity="">
+<link rel="preload" href="./scss/main.min.5ce073dda6e33cae3de287b158851dad98493bc2cbe4f748afe04f188c492be9.css" as="style">
+<link href="./scss/main.min.5ce073dda6e33cae3de287b158851dad98493bc2cbe4f748afe04f188c492be9.css" rel="stylesheet" integrity="">
 
 
 
@@ -514,11 +514,10 @@
       
 
         hits = hits.filter((item)=>{
-          let hitLangPage = item['dir'].split('\\')[0].toLowerCase();
-          let tmpInd = document.location.pathname.split('/').indexOf(hitLangPage);
-          let curLangPage = tmpInd > -1 ? document.location.pathname.split('/')[tmpInd].toLowerCase() : '';
+          let hitLangPage = item['url'].split('/')[4].toLowerCase();
+          let isCorrectHit = document.location.pathname.replace('.', '/').split('/').indexOf(hitLangPage) > -1;
           
-          return hitLangPage === curLangPage;
+          return isCorrectHit
         })
 
         return hits

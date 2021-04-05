@@ -68,6 +68,8 @@
   </url><url>
     <loc>/dart/components/</loc>
   </url><url>
+    <loc>/golang/components/</loc>
+  </url><url>
     <loc>/dart/commons/config/</loc>
   </url><url>
     <loc>/dart/components/config/</loc>
@@ -87,6 +89,8 @@
     <loc>/python/pip-services3-commons/config/</loc>
   </url><url>
     <loc>/python/pip-services3-components/config/</loc>
+  </url><url>
+    <loc>/golang/commons/config/configparams/</loc>
   </url><url>
     <loc>/dart/components/connect/</loc>
   </url><url>
@@ -150,6 +154,8 @@
   </url><url>
     <loc>/golang/commons/commands/icommandinterceptor/</loc>
   </url><url>
+    <loc>/golang/commons/config/iconfigurable/</loc>
+  </url><url>
     <loc>/golang/commons/commands/ievent/</loc>
   </url><url>
     <loc>/golang/commons/commands/ieventlistener/</loc>
@@ -195,8 +201,6 @@
     <loc>/node/pip-services3-commons/</loc>
   </url><url>
     <loc>/python/pip-services3-commons/</loc>
-  </url><url>
-    <loc>/golang/components/</loc>
   </url><url>
     <loc>/net/pip-services3-components/</loc>
   </url><url>
