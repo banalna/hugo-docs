@@ -44,6 +44,8 @@
   </url><url>
     <loc>/python/pip-services3-components/cache/</loc>
   </url><url>
+    <loc>/tutorials/client_library/</loc>
+  </url><url>
     <loc>/dart/commons/commands/command/</loc>
   </url><url>
     <loc>/golang/commons/commands/command/</loc>
@@ -150,8 +152,6 @@
   </url><url>
     <loc>/get_started/</loc>
   </url><url>
-    <loc>/getting_started/</loc>
-  </url><url>
     <loc>/golang/commons/commands/icommand/</loc>
   </url><url>
     <loc>/golang/commons/commands/icommandable/</loc>
@@ -216,6 +216,8 @@
   </url><url>
     <loc>/python/pip-services3-components/</loc>
   </url><url>
+    <loc>/quick_start/</loc>
+  </url><url>
     <loc>/dart/commons/random/</loc>
   </url><url>
     <loc>/golang/commons/random/</loc>
@@ -259,6 +261,18 @@
     <loc>/python/pip-services3-commons/run/</loc>
   </url><url>
     <loc>/tutorials/data_microservice/step1/</loc>
+  </url><url>
+    <loc>/tutorials/data_microservice/step2/</loc>
+  </url><url>
+    <loc>/tutorials/data_microservice/step3/</loc>
+  </url><url>
+    <loc>/tutorials/data_microservice/step4/</loc>
+  </url><url>
+    <loc>/tutorials/data_microservice/step5/</loc>
+  </url><url>
+    <loc>/tutorials/data_microservice/step6/</loc>
+  </url><url>
+    <loc>/tutorials/data_microservice/step7/</loc>
   </url><url>
     <loc>/dart/components/test/</loc>
   </url><url>
