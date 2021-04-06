@@ -132,6 +132,8 @@
   </url><url>
     <loc>/python/pip-services3-commons/data/</loc>
   </url><url>
+    <loc>/tutorials/data_microservice/</loc>
+  </url><url>
     <loc>/dart/commons/errors/</loc>
   </url><url>
     <loc>/golang/commons/errors/</loc>
@@ -255,6 +257,8 @@
     <loc>/node/pip-services3-commons/run/</loc>
   </url><url>
     <loc>/python/pip-services3-commons/run/</loc>
+  </url><url>
+    <loc>/tutorials/data_microservice/step1/</loc>
   </url><url>
     <loc>/dart/components/test/</loc>
   </url><url>
